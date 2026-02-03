@@ -18,7 +18,7 @@
             --color-light: #f5f5f5;
             --color-white: #ffffff;
             --color-text: #333333;
-            --color-text-light: #666666;
+            --color-text-light: #444444; /* Ajustado para melhor legibilidade */
             --color-border: #e0e0e0;
             --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             --transition: all 0.3s ease;
@@ -83,8 +83,10 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="3" fill="rgba(255,255,255,0.05)"/></svg>');
-            opacity: 0.3;
+            background: url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/zVnnHqrKHedizmJy.svg'); /* Nestle-KVRegenerar_circulo.svg */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
         }
 
         .hero-content {
@@ -365,99 +367,40 @@
         }
 
         .progress-input-group input:focus {
-            outline: none;
             border-color: var(--color-secondary);
-            box-shadow: 0 0 8px rgba(90, 157, 61, 0.2);
+            outline: none;
         }
 
-        .progress-input-group button {
-            padding: 0.8rem 2rem;
-            background-color: var(--color-secondary);
-            color: var(--color-white);
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .progress-input-group button:hover {
-            background-color: var(--color-primary);
-        }
-
-        .progress-result {
-            display: none;
-            text-align: center;
-        }
-
-        .progress-result.active {
-            display: block;
-        }
-
-        .progress-result h3 {
-            color: var(--color-primary);
-            margin-bottom: 1rem;
-        }
-
-        .progress-bar {
-            background-color: var(--color-border);
-            height: 10px;
-            border-radius: 5px;
+        .progress-iframe-container {
+            min-height: 300px; /* Altura mínima para o iframe */
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
             overflow: hidden;
-            margin: 1rem 0;
         }
 
-        .progress-fill {
-            background-color: var(--color-secondary);
+        .progress-iframe-container iframe {
+            width: 100%;
             height: 100%;
-            transition: var(--transition);
+            border: none;
         }
 
-        .progress-info {
-            color: var(--color-text-light);
-            margin: 1rem 0;
-        }
-
-        /* ===== RANKING ===== */
+        /* ===== RANKING GLOBAL ===== */
         .ranking {
             background-color: var(--color-white);
         }
 
-        .ranking-container {
-            background-color: var(--color-light);
-            border-radius: 10px;
+        .ranking-iframe-container {
+            min-height: 500px; /* Altura mínima para o iframe */
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
             overflow: hidden;
             margin-top: 2rem;
         }
 
-        .ranking-table {
+        .ranking-iframe-container iframe {
             width: 100%;
-            border-collapse: collapse;
-        }
-
-        .ranking-table thead {
-            background-color: var(--color-primary);
-            color: var(--color-white);
-        }
-
-        .ranking-table th {
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        .ranking-table td {
-            padding: 1rem;
-            border-bottom: 1px solid var(--color-border);
-        }
-
-        .ranking-table tbody tr:hover {
-            background-color: var(--color-white);
-        }
-
-        .ranking-position {
-            font-weight: 700;
-            color: var(--color-secondary);
+            height: 100%;
+            border: none;
         }
 
         /* ===== FAQ ===== */
@@ -465,64 +408,54 @@
             background-color: var(--color-light);
         }
 
-        .faq-container {
-            max-width: 800px;
-            margin: 2rem auto;
-        }
-
         .faq-item {
             background-color: var(--color-white);
             margin-bottom: 1rem;
-            border-radius: 5px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
 
         .faq-question {
-            padding: 1.5rem;
-            background-color: var(--color-white);
-            cursor: pointer;
+            padding: 1.2rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: var(--transition);
+            cursor: pointer;
             font-weight: 600;
             color: var(--color-primary);
+            transition: var(--transition);
         }
 
         .faq-question:hover {
-            background-color: var(--color-light);
+            background-color: #e8f5e9;
         }
 
-        .faq-toggle {
+        .faq-question .icon {
             font-size: 1.5rem;
-            transition: var(--transition);
-        }
-
-        .faq-item.active .faq-toggle {
-            transform: rotate(180deg);
+            transition: transform 0.3s ease;
         }
 
         .faq-answer {
+            padding: 0 1.5rem 1.2rem 1.5rem;
+            color: var(--color-text-light);
             max-height: 0;
             overflow: hidden;
-            transition: var(--transition);
-            padding: 0 1.5rem;
+            transition: max-height 0.5s ease-out;
         }
 
         .faq-item.active .faq-answer {
-            max-height: 500px;
-            padding: 1.5rem;
+            max-height: 200px; /* Ajuste conforme o conteúdo */
+            transition: max-height 0.5s ease-in;
         }
 
-        .faq-answer p {
-            color: var(--color-text-light);
-            line-height: 1.8;
+        .faq-item.active .faq-question .icon {
+            transform: rotate(180deg);
         }
 
         /* ===== CTA FINAL ===== */
         .cta-final {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
             color: var(--color-white);
             text-align: center;
             padding: 4rem 2rem;
@@ -530,117 +463,82 @@
 
         .cta-final h2 {
             color: var(--color-white);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .cta-final p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-
-        .cta-final .cta-button {
-            background-color: var(--color-accent);
-            color: var(--color-primary);
+            opacity: 0.9;
         }
 
         /* ===== FOOTER ===== */
         footer {
             background-color: var(--color-primary);
             color: var(--color-white);
-            padding: 2rem;
             text-align: center;
-        }
-
-        /* ===== MODAL ===== */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            background-color: var(--color-white);
             padding: 2rem;
-            border-radius: 10px;
-            max-width: 500px;
-            width: 90%;
-            position: relative;
+            font-size: 0.9rem;
         }
 
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--color-text-light);
+        footer p {
+            margin: 0;
         }
 
-        /* ===== RESPONSIVO ===== */
+        /* ===== RESPONSIVIDADE ===== */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
             .hero p {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
 
             .about-content {
                 grid-template-columns: 1fr;
             }
 
+            .about-visual {
+                order: -1; /* Imagem acima do texto no mobile */
+                margin-bottom: 2rem;
+            }
+
+            .steps, .levels-grid, .categories-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-container {
+                flex-direction: column;
+            }
+
             nav {
-                display: none;
+                margin-top: 1rem;
             }
 
-            section {
-                padding: 2rem 1rem;
-            }
-
-            section h2 {
-                font-size: 1.8rem;
+            nav a {
+                margin: 0 0.5rem;
             }
 
             .progress-input-group {
                 flex-direction: column;
             }
 
-            .ranking-table {
-                font-size: 0.9rem;
-            }
-
-            .ranking-table th,
-            .ranking-table td {
-                padding: 0.7rem;
+            .progress-input-group button {
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
-    <!-- HEADER -->
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="REGENERAR_ASSINATURA_VERTICAL_regenerar_verde.svg" alt="Regenerar">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/uwXXjqbJtyRLFjKM.svg" alt="Nestlé Regenera Logo">
             </div>
             <nav>
                 <a href="#about">Sobre</a>
-                <a href="#how">Como Funciona</a>
+                <a href="#how-it-works">Como Funciona</a>
                 <a href="#progress">Progresso</a>
                 <a href="#ranking">Ranking</a>
                 <a href="#faq">FAQ</a>
@@ -648,270 +546,233 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Jornada Regenera 2026</h1>
-            <p>Sua ação transforma o futuro. Sua jornada começa agora.</p>
-            <div class="hero-logo">
-                <img src="Nestle╠ü-KVRegenerar_semfundo.svg" alt="Nestlé Regenera">
-            </div>
-            <a href="#about" class="cta-button">Descobrir a Jornada</a>
-        </div>
-    </section>
-
-    <!-- O QUE É A JORNADA -->
-    <section class="about" id="about">
-        <h2>O Que é a Jornada Regenera?</h2>
-        <p>Conheça a iniciativa que transforma suas ações em impacto</p>
-        <div class="about-content">
-            <div class="about-text">
-                <h3>Transformando Ações em Impacto</h3>
-                <p>A Jornada Regenera 2026 é um programa de engajamento que reconhece e celebra as contribuições de cada colaborador Nestlé para a sustentabilidade e a regeneração do planeta.</p>
-                <p>Cada ação que você realiza — seja aprendendo sobre sustentabilidade, participando de iniciativas, agindo no dia a dia ou influenciando colegas — gera pontos e o leva a níveis cada vez mais altos.</p>
-                <p>Durante 12 meses, você será parte de uma jornada coletiva rumo a um futuro mais verde e regenerativo. Sua participação importa. Seu impacto é real.</p>
-            </div>
-            <div class="about-visual">
-                <img src="Prancheta1.svg" alt="Jornada Regenera">
-            </div>
-        </div>
-    </section>
-
-    <!-- COMO FUNCIONA -->
-    <section class="how-it-works" id="how">
-        <h2>Como Funciona</h2>
-        <p>Um processo simples e transparente</p>
-        <div class="steps">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h3>Escolha uma Ação</h3>
-                <p>Explore o catálogo de ações ESG e escolha aquela que mais faz sentido para você.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">2</div>
-                <h3>Realize a Ação</h3>
-                <p>Coloque em prática! Aprenda, participe, aja ou influencie colegas.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3>Envie a Evidência</h3>
-                <p>Registre sua ação anexando uma foto ou comprovante na plataforma.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">4</div>
-                <h3>Ganhe Pontos</h3>
-                <p>Após validação, seus pontos são somados e você sobe de nível!</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- NÍVEIS -->
-    <section class="levels">
-        <h2>Seus Níveis de Evolução</h2>
-        <p>Progresse e torne-se um Guardião da Regeneração</p>
-        <div class="levels-grid">
-            <div class="level-card">
-                <div class="level-icon">🌱</div>
-                <h3>Descobridor</h3>
-                <div class="points">0 - 49 pontos</div>
-                <p>Você está começando! Explore as ações, aprenda e dê seus primeiros passos na regeneração.</p>
-            </div>
-            <div class="level-card">
-                <div class="level-icon">🌿</div>
-                <h3>Explorador</h3>
-                <div class="points">50 - 149 pontos</div>
-                <p>Você já está engajado! Sua participação é regular e você já faz a diferença no dia a dia.</p>
-            </div>
-            <div class="level-card">
-                <div class="level-icon">🌳</div>
-                <h3>Multiplicador</h3>
-                <div class="points">150 - 299 pontos</div>
-                <p>Você é uma inspiração! Suas ações impactam e você já influencia colegas a participarem.</p>
-            </div>
-            <div class="level-card">
-                <div class="level-icon">🌲</div>
-                <h3>Guardião</h3>
-                <div class="points">300+ pontos</div>
-                <p>Parabéns! Você é um líder e defensor ativo da regeneração. Um verdadeiro Guardião!</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CATEGORIAS -->
-    <section class="categories">
-        <h2>As 4 Categorias de Engajamento</h2>
-        <p>Explore diferentes formas de contribuir</p>
-        <div class="categories-grid">
-            <div class="category-card">
-                <div class="category-icon">📚</div>
-                <h3>Conhecimento</h3>
-                <p>Aprenda sobre sustentabilidade através de vídeos, artigos e cursos.</p>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">🤝</div>
-                <h3>Participação</h3>
-                <p>Envolva-se em eventos, workshops e discussões sobre regeneração.</p>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">✋</div>
-                <h3>Ação</h3>
-                <p>Coloque a mão na massa! Implemente práticas sustentáveis no seu dia a dia.</p>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">💡</div>
-                <h3>Influência</h3>
-                <p>Inspire e lidere outros. Compartilhe ideias e mentore colegas.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROGRESSO PESSOAL -->
-    <section class="progress" id="progress">
-        <h2>Seu Progresso na Jornada</h2>
-        <p>Acompanhe seu desenvolvimento e próximas metas</p>
-        <div class="progress-container">
-            <div class="progress-input-group">
-                <input type="email" id="emailInput" placeholder="Digite seu e-mail Nestlé">
-                <button onclick="searchProgress()">Ver Progresso</button>
-            </div>
-            <div class="progress-result" id="progressResult">
-                <h3 id="userName">Seu Nome</h3>
-                <p id="userLevel">Nível: Descobridor</p>
-                <p id="userPoints">Pontuação: 0 pontos</p>
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Jornada Regenera 2026</h1>
+                <p>Sua ação transforma o futuro. Sua jornada começa agora.</p>
+                <div class="hero-logo">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/ixXhgadFUPYuAubO.svg" alt="Nestlé Regenera">
                 </div>
-                <div class="progress-info">
-                    <p id="nextLevelInfo">Faltam X pontos para o próximo nível</p>
-                </div>
-                <button class="cta-button" onclick="openFormModal()">Registrar Nova Conquista</button>
+                <a href="#about" class="cta-button">Descobrir a Jornada</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- RANKING -->
-    <section class="ranking" id="ranking">
-        <h2>Ranking Global</h2>
-        <p>Inspire-se com os colaboradores mais engajados</p>
-        <div class="ranking-container">
-            <iframe class="airtable-embed" src="https://airtable.com/embed/shrmo5avHRMEBqiuY" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq" id="faq">
-        <h2>Perguntas Frequentes</h2>
-        <p>Tire suas dúvidas sobre a Jornada Regenera</p>
-        <div class="faq-container">
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>Como envio minha evidência?</span>
-                    <span class="faq-toggle">▼</span>
+        <section id="about" class="about">
+            <h2>O Que é a Jornada Regenera?</h2>
+            <p>Conheça a iniciativa que transforma suas ações em impacto</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Transformando Ações em Impacto</h3>
+                    <p>
+                        A Jornada Regenera 2026 é um programa de engajamento que reconhece e celebra as contribuições de cada colaborador Nestlé para a sustentabilidade e a regeneração do planeta.
+                    </p>
+                    <p>
+                        Cada ação que você realiza — seja aprendendo sobre sustentabilidade, participando de iniciativas, agindo no dia a dia ou influenciando colegas — gera pontos e o leva a níveis cada vez mais altos.
+                    </p>
+                    <p>
+                        Durante 12 meses, você será parte de uma jornada coletiva rumo a um futuro mais verde e regenerativo. Sua participação importa. Seu impacto é real.
+                    </p>
                 </div>
-                <div class="faq-answer">
-                    <p>Clique no botão "Registrar Nova Conquista" e preencha o formulário com os detalhes da ação realizada. Anexe uma foto ou comprovante que demonstre a ação. Após a submissão, a equipe validará sua evidência em até 30 dias.</p>
+                <div class="about-visual">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/gBbVTAmxyTHxbggs.svg" alt="Jornada Regenera">
                 </div>
             </div>
+        </section>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>Quanto tempo leva para minha evidência ser validada?</span>
-                    <span class="faq-toggle">▼</span>
+        <section id="how-it-works" class="how-it-works">
+            <h2>Como Funciona</h2>
+            <p>Um processo simples e transparente</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Escolha uma Ação</h3>
+                    <p>Explore o catálogo de ações ESG e escolha aquela que mais faz sentido para você.</p>
                 </div>
-                <div class="faq-answer">
-                    <p>A validação das evidências é realizada pela equipe de moderação e pode levar até 30 dias. Você receberá uma notificação quando sua evidência for aprovada ou rejeitada.</p>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Realize a Ação</h3>
+                    <p>Coloque em prática! Aprenda, participe, aja ou influencie colegas.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Envie a Evidência</h3>
+                    <p>Registre sua ação anexando uma foto ou comprovante na plataforma.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Ganhe Pontos</h3>
+                    <p>Após validação, seus pontos são somados e você sobe de nível!</p>
                 </div>
             </div>
+        </section>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>Posso enviar várias ações por dia?</span>
-                    <span class="faq-toggle">▼</span>
+        <section class="levels">
+            <h2>Seus Níveis de Evolução</h2>
+            <p>Progresse e torne-se um Guardião da Regeneração</p>
+            <div class="levels-grid">
+                <div class="level-card">
+                    <span class="level-icon">🌱</span>
+                    <h3>Descobridor</h3>
+                    <p class="points">0 - 49 pontos</p>
+                    <p>Você está começando! Explore as ações, aprenda e dê seus primeiros passos na regeneração.</p>
                 </div>
-                <div class="faq-answer">
-                    <p>Sim! Você pode enviar quantas ações quiser, desde que cada uma tenha uma evidência clara e válida. Quanto mais você participar, mais pontos acumula e mais rápido sobe de nível.</p>
+                <div class="level-card">
+                    <span class="level-icon">🌿</span>
+                    <h3>Explorador</h3>
+                    <p class="points">50 - 149 pontos</p>
+                    <p>Você já está engajado! Sua participação é regular e você já faz a diferença no dia a dia.</p>
+                </div>
+                <div class="level-card">
+                    <span class="level-icon">🌳</span>
+                    <h3>Multiplicador</h3>
+                    <p class="points">150 - 299 pontos</p>
+                    <p>Você é uma inspiração! Suas ações impactam e você já influencia colegas a participarem.</p>
+                </div>
+                <div class="level-card">
+                    <span class="level-icon">🌲</span>
+                    <h3>Guardião</h3>
+                    <p class="points">300+ pontos</p>
+                    <p>Parabéns! Você é um líder e defensor ativo da regeneração. Um verdadeiro Guardião!</p>
                 </div>
             </div>
+        </section>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>O que acontece se minha evidência for rejeitada?</span>
-                    <span class="faq-toggle">▼</span>
+        <section class="categories">
+            <h2>As 4 Categorias de Engajamento</h2>
+            <p>Explore diferentes formas de contribuir</p>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <span class="category-icon">📚</span>
+                    <h3>Conhecimento</h3>
+                    <p>Aprenda sobre sustentabilidade através de vídeos, artigos e cursos.</p>
                 </div>
-                <div class="faq-answer">
-                    <p>Se sua evidência for rejeitada, você receberá uma notificação com o motivo. Você pode corrigir e reenviar a evidência quantas vezes precisar até que seja aprovada.</p>
+                <div class="category-card">
+                    <span class="category-icon">🤝</span>
+                    <h3>Participação</h3>
+                    <p>Envolva-se em eventos, workshops e discussões sobre regeneração.</p>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">✋</span>
+                    <h3>Ação</h3>
+                    <p>Coloque a mão na massa! Implemente práticas sustentáveis no seu dia a dia.</p>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">💡</span>
+                    <h3>Influência</h3>
+                    <p>Inspire e lidere outros. Compartilhe ideias e mentore colegas.</p>
                 </div>
             </div>
+        </section>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>Qual é o objetivo final da Jornada?</span>
-                    <span class="faq-toggle">▼</span>
+        <section id="progress" class="progress">
+            <h2>Seu Progresso na Jornada</h2>
+            <p>Acompanhe seu desenvolvimento e próximas metas</p>
+            <div class="progress-container">
+                <div class="progress-input-group">
+                    <input type="email" id="emailInput" placeholder="Digite seu e-mail Nestlé">
+                    <button class="cta-button" onclick="verProgresso()">Ver Progresso</button>
                 </div>
-                <div class="faq-answer">
-                    <p>O objetivo é engajar todos os colaboradores Nestlé em uma jornada de 12 meses rumo à regeneração. Queremos que você não apenas acumule pontos, mas que internalize a importância da sustentabilidade e se torne um multiplicador de mudanças positivas.</p>
+                <div id="progressFrameContainer" class="progress-iframe-container" style="display:none;">
+                    <iframe id="progressFrame" src="" title="Meu Progresso"></iframe>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA FINAL -->
-    <section class="cta-final">
-        <h2>Pronto para Começar?</h2>
-        <p>Registre sua primeira ação e faça parte da transformação</p>
-        <button class="cta-button" onclick="openFormModal()">Registrar Minha Primeira Ação</button>
-    </section>
+        <section id="ranking" class="ranking">
+            <h2>Ranking Global</h2>
+            <p>Inspire-se com os colaboradores mais engajados</p>
+            <div class="ranking-iframe-container">
+                <iframe src="https://airtable.com/embed/shrZZZZZZZZZZ?backgroundColor=green&viewControls=on" title="Ranking Global"></iframe>
+            </div>
+        </section>
 
-    <!-- FOOTER -->
+        <section id="faq" class="faq">
+            <h2>Perguntas Frequentes</h2>
+            <p>Tire suas dúvidas sobre a Jornada Regenera</p>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Como envio minha evidência?
+                        <span class="icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Clique no botão "Registrar Minha Primeira Ação" e preencha o formulário com os detalhes da ação realizada. Anexe uma foto ou comprovante que demonstre a ação. Após a submissão, a equipe validará sua evidência em até 30 dias.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Quanto tempo leva para minha evidência ser validada?
+                        <span class="icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A validação das evidências é realizada pela equipe de moderação e pode levar até 30 dias. Você receberá uma notificação quando sua evidência for aprovada ou rejeitada.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Posso enviar várias ações por dia?
+                        <span class="icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Você pode enviar até 2 evidências por semana. Cada ação deve ter uma evidência clara e válida. Quanto mais você participar, mais pontos acumula e mais rápido sobe de nível!</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        O que acontece se minha evidência for rejeitada?
+                        <span class="icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Se sua evidência for rejeitada, você receberá uma notificação com o motivo. Você pode corrigir e reenviar a evidência quantas vezes precisar até que seja aprovada.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Qual é o objetivo final da Jornada?
+                        <span class="icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>O objetivo é engajar todos os colaboradores Nestlé em uma jornada de 12 meses rumo à regeneração. Queremos que você não apenas acumule pontos, mas que internalize a importância da sustentabilidade e se torne um multiplicador de mudanças positivas, contribuindo para um futuro mais verde e sustentável.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-final">
+            <h2>Pronto para Começar?</h2>
+            <p>Registre sua primeira ação e faça parte da transformação</p>
+            <a href="https://airtable.com/shrXXXXXXXXXX" class="cta-button" target="_blank">Registrar Minha Primeira Ação</a>
+        </section>
+    </main>
+
     <footer>
-        <p>&copy; 2026 Nestlé Brasil. Jornada Regenera. Todos os direitos reservados.</p>
+        <p>Um projeto Auíri. Inovação para Impacto.</p>
     </footer>
 
-    <!-- MODAL PARA FORMULÁRIO -->
-    <div class="modal" id="formModal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeFormModal()">✕</button>
-            <h2>Registrar Minha Ação</h2>
-            <iframe class="airtable-embed" src="https://airtable.com/embed/shrXXXXXXXXXX" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
-        </div>
-    </div>
-
     <script>
-        // Toggle FAQ
-        function toggleFaq(element) {
-            element.parentElement.classList.toggle('active');
-        }
-
-        // Modal Functions
-        function openFormModal() {
-            document.getElementById('formModal').classList.add('active');
-        }
-
-        function closeFormModal() {
-            document.getElementById('formModal').classList.remove('active');
-        }
-
-        // Search Progress
-        function searchProgress() {
-            const email = document.getElementById('emailInput').value;
-            if (email) {
-                // Aqui você faria uma chamada à API do Airtable para buscar os dados
-                // Por enquanto, vamos simular
-                document.getElementById('progressResult').classList.add('active');
-                document.getElementById('userName').textContent = 'João Silva';
-                document.getElementById('userLevel').textContent = 'Nível: Explorador';
-                document.getElementById('userPoints').textContent = 'Pontuação: 85 pontos';
-                document.getElementById('progressFill').style.width = '70%';
-                document.getElementById('nextLevelInfo').textContent = 'Faltam 65 pontos para Multiplicador';
-            }
-        }
-
-        // Close modal when clicking outside
-        document.getElementById('formModal').addEventListener('click', function(event) {
-            if (event.target === this) {
-                closeFormModal();
-            }
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const faqItem = item.closest('.faq-item');
+                faqItem.classList.toggle('active');
+            });
         });
+
+        function verProgresso() {
+            const emailInput = document.getElementById('emailInput');
+            const email = emailInput.value;
+            const progressFrame = document.getElementById('progressFrame');
+            const progressFrameContainer = document.getElementById('progressFrameContainer');
+
+            if (email) {
+                // Substitua 'shrZZZZZZZZZZ' pela URL da sua view 'Meu Progresso' do Airtable
+                progressFrame.src = `https://airtable.com/embed/shrYYYYYYYYYY?filter_Email=${encodeURIComponent(email)}`;
+                progressFrameContainer.style.display = 'block';
+            } else {
+                alert('Por favor, digite seu e-mail Nestlé para ver seu progresso.');
+                progressFrameContainer.style.display = 'none';
+            }
+        }
     </script>
 </body>
 </html>
