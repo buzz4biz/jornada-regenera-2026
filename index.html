@@ -1,571 +1,917 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Jornada Regenera 2026 - Transforme suas ações ESG em impacto mensurável">
-  <title>Jornada Regenera 2026 | Nestlé Brasil</title>
-  
-  <style>
-    /* CORES DO GUIA DE MARCA REGENERAR */
-    :root {
-      --verde-regenera: #006937;
-      --marrom-regenera: #64513D;
-      --bege-kraft: #FED4A0;
-      --verde-claro: #739865;
-      --branco: #FFFFFF;
-      --cinza-claro: #F5F5F5;
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: var(--cinza-claro);
-    }
-    
-    /* HEADER */
-    header {
-      background: linear-gradient(135deg, var(--verde-regenera) 0%, var(--verde-claro) 100%);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    
-    header h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-    
-    header .subtitle {
-      font-size: 1.5em;
-      font-weight: 300;
-      opacity: 0.95;
-      margin-bottom: 30px;
-    }
-    
-    header p {
-      font-size: 1.1em;
-      max-width: 600px;
-      margin: 0 auto;
-      opacity: 0.9;
-    }
-    
-    /* CONTAINER */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    
-    /* SEÇÕES */
-    section {
-      background: white;
-      margin: 30px 0;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    
-    section h2 {
-      color: var(--verde-regenera);
-      font-size: 2em;
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      border-bottom: 3px solid var(--bege-kraft);
-    }
-    
-    section p {
-      font-size: 1.1em;
-      color: #666;
-      margin-bottom: 20px;
-    }
-    
-    /* BOTÕES */
-    .btn {
-      display: inline-block;
-      background: var(--verde-regenera);
-      color: white;
-      padding: 18px 40px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 1.2em;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    
-    .btn:hover {
-      background: var(--marrom-regenera);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-    }
-    
-    .btn-secondary {
-      background: var(--marrom-regenera);
-    }
-    
-    .btn-secondary:hover {
-      background: var(--verde-regenera);
-    }
-    
-    /* NÍVEIS */
-    .niveis-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-    
-    .nivel-card {
-      background: linear-gradient(135deg, var(--verde-claro) 0%, var(--verde-regenera) 100%);
-      color: white;
-      padding: 30px;
-      border-radius: 12px;
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-    
-    .nivel-card:hover {
-      transform: translateY(-5px);
-    }
-    
-    .nivel-card .icon {
-      font-size: 4em;
-      margin-bottom: 10px;
-    }
-    
-    .nivel-card h3 {
-      font-size: 1.5em;
-      margin-bottom: 5px;
-    }
-    
-    .nivel-card .pontos {
-      font-size: 1.2em;
-      opacity: 0.9;
-    }
-    
-    /* INPUT EMAIL */
-    .email-box {
-      background: var(--cinza-claro);
-      padding: 30px;
-      border-radius: 8px;
-      margin: 20px 0;
-    }
-    
-    .email-input {
-      display: flex;
-      gap: 10px;
-      margin-top: 15px;
-    }
-    
-    .email-input input {
-      flex: 1;
-      padding: 15px;
-      border: 2px solid var(--verde-regenera);
-      border-radius: 6px;
-      font-size: 1.1em;
-    }
-    
-    .email-input button {
-      padding: 15px 30px;
-      background: var(--verde-regenera);
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 1.1em;
-      cursor: pointer;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-    
-    .email-input button:hover {
-      background: var(--marrom-regenera);
-    }
-    
-    /* IFRAME */
-    .iframe-container {
-      margin-top: 30px;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      display: none;
-    }
-    
-    .iframe-container.show {
-      display: block;
-    }
-    
-    iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-    }
-    
-    /* CATEGORIAS */
-    .categorias-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
-    }
-    
-    .categoria-card {
-      background: var(--cinza-claro);
-      padding: 25px;
-      border-radius: 12px;
-      border-left: 5px solid var(--verde-regenera);
-    }
-    
-    .categoria-card h3 {
-      color: var(--verde-regenera);
-      font-size: 1.8em;
-      margin-bottom: 10px;
-    }
-    
-    .categoria-card .pontos-valor {
-      font-size: 2em;
-      font-weight: 700;
-      color: var(--marrom-regenera);
-      margin-bottom: 10px;
-    }
-    
-    .categoria-card ul {
-      list-style: none;
-      padding-left: 0;
-      margin-top: 15px;
-    }
-    
-    .categoria-card li {
-      padding: 5px 0;
-      padding-left: 20px;
-      position: relative;
-    }
-    
-    .categoria-card li:before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: var(--verde-regenera);
-      font-weight: bold;
-    }
-    
-    /* FOOTER */
-    footer {
-      background: var(--verde-regenera);
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-      margin-top: 50px;
-    }
-    
-    footer p {
-      margin: 5px 0;
-    }
-    
-    footer a {
-      color: var(--bege-kraft);
-      text-decoration: none;
-      margin: 0 10px;
-    }
-    
-    footer a:hover {
-      text-decoration: underline;
-    }
-    
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2em;
-      }
-      
-      header .subtitle {
-        font-size: 1.2em;
-      }
-      
-      section {
-        padding: 25px;
-      }
-      
-      .email-input {
-        flex-direction: column;
-      }
-      
-      .niveis-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    
-    /* ALERTA */
-    .alert {
-      background: #FFF3CD;
-      border: 2px solid #FFE69C;
-      border-radius: 8px;
-      padding: 20px;
-      margin: 20px 0;
-      color: #856404;
-    }
-    
-    .alert strong {
-      display: block;
-      margin-bottom: 10px;
-      font-size: 1.2em;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jornada Regenera 2026 - Nestlé</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #2d5016;
+            --color-secondary: #5a9d3d;
+            --color-accent: #8bc34a;
+            --color-light: #f5f5f5;
+            --color-white: #ffffff;
+            --color-text: #333333;
+            --color-text-light: #666666;
+            --color-border: #e0e0e0;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--color-text);
+            line-height: 1.6;
+            background-color: var(--color-white);
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background-color: var(--color-white);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        nav a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--color-secondary);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: var(--color-white);
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="3" fill="rgba(255,255,255,0.05)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-logo {
+            margin: 2rem 0;
+        }
+
+        .hero-logo img {
+            height: 80px;
+            width: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .cta-button:hover {
+            background-color: var(--color-white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ===== SECTION STYLES ===== */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+            text-align: center;
+        }
+
+        section > p:first-of-type {
+            text-align: center;
+            color: var(--color-text-light);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        /* ===== O QUE É A JORNADA ===== */
+        .about {
+            background-color: var(--color-light);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: var(--color-secondary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: var(--color-text-light);
+        }
+
+        .about-visual {
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-visual img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* ===== COMO FUNCIONA ===== */
+        .how-it-works {
+            background-color: var(--color-white);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .step {
+            background-color: var(--color-light);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: var(--transition);
+            border-left: 4px solid var(--color-secondary);
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-number {
+            display: inline-block;
+            background-color: var(--color-secondary);
+            color: var(--color-white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            line-height: 50px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .step h3 {
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .step p {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+        }
+
+        /* ===== NÍVEIS ===== */
+        .levels {
+            background-color: var(--color-light);
+        }
+
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .level-card {
+            background-color: var(--color-white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            border-top: 4px solid var(--color-secondary);
+            transition: var(--transition);
+        }
+
+        .level-card:nth-child(1) { border-top-color: #90ee90; }
+        .level-card:nth-child(2) { border-top-color: #5a9d3d; }
+        .level-card:nth-child(3) { border-top-color: #2d5016; }
+        .level-card:nth-child(4) { border-top-color: #1a3009; }
+
+        .level-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .level-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .level-card h3 {
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .level-card .points {
+            color: var(--color-secondary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .level-card p {
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* ===== CATEGORIAS ===== */
+        .categories {
+            background-color: var(--color-white);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .category-card {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: var(--color-white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(45, 80, 22, 0.3);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .category-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .category-card p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* ===== PROGRESSO PESSOAL ===== */
+        .progress {
+            background-color: var(--color-light);
+        }
+
+        .progress-container {
+            background-color: var(--color-white);
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 2rem auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-input-group {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .progress-input-group input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 2px solid var(--color-border);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .progress-input-group input:focus {
+            outline: none;
+            border-color: var(--color-secondary);
+            box-shadow: 0 0 8px rgba(90, 157, 61, 0.2);
+        }
+
+        .progress-input-group button {
+            padding: 0.8rem 2rem;
+            background-color: var(--color-secondary);
+            color: var(--color-white);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .progress-input-group button:hover {
+            background-color: var(--color-primary);
+        }
+
+        .progress-result {
+            display: none;
+            text-align: center;
+        }
+
+        .progress-result.active {
+            display: block;
+        }
+
+        .progress-result h3 {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .progress-bar {
+            background-color: var(--color-border);
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .progress-fill {
+            background-color: var(--color-secondary);
+            height: 100%;
+            transition: var(--transition);
+        }
+
+        .progress-info {
+            color: var(--color-text-light);
+            margin: 1rem 0;
+        }
+
+        /* ===== RANKING ===== */
+        .ranking {
+            background-color: var(--color-white);
+        }
+
+        .ranking-container {
+            background-color: var(--color-light);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+
+        .ranking-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .ranking-table thead {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .ranking-table th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .ranking-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .ranking-table tbody tr:hover {
+            background-color: var(--color-white);
+        }
+
+        .ranking-position {
+            font-weight: 700;
+            color: var(--color-secondary);
+        }
+
+        /* ===== FAQ ===== */
+        .faq {
+            background-color: var(--color-light);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+
+        .faq-item {
+            background-color: var(--color-white);
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            background-color: var(--color-white);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        .faq-question:hover {
+            background-color: var(--color-light);
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition);
+            padding: 0 1.5rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 1.5rem;
+        }
+
+        .faq-answer p {
+            color: var(--color-text-light);
+            line-height: 1.8;
+        }
+
+        /* ===== CTA FINAL ===== */
+        .cta-final {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: var(--color-white);
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .cta-final h2 {
+            color: var(--color-white);
+            margin-bottom: 1rem;
+        }
+
+        .cta-final p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-final .cta-button {
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* ===== MODAL ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: var(--color-white);
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--color-text-light);
+        }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none;
+            }
+
+            section {
+                padding: 2rem 1rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            .progress-input-group {
+                flex-direction: column;
+            }
+
+            .ranking-table {
+                font-size: 0.9rem;
+            }
+
+            .ranking-table th,
+            .ranking-table td {
+                padding: 0.7rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="REGENERAR_ASSINATURA_VERTICAL_regenerar_verde.svg" alt="Regenerar">
+            </div>
+            <nav>
+                <a href="#about">Sobre</a>
+                <a href="#how">Como Funciona</a>
+                <a href="#progress">Progresso</a>
+                <a href="#ranking">Ranking</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+        </div>
+    </header>
 
-  <!-- HEADER -->
-  <header>
-    <h1>🌱 Jornada Regenera 2026</h1>
-    <p class="subtitle">rê.generar é nutrir o que faz bem</p>
-    <p>Transforme suas ações ESG em impacto mensurável. Ganhe pontos, suba de nível e inspire outros colaboradores!</p>
-  </header>
-
-  <div class="container">
-    
-    <!-- SEÇÃO 1: ENVIAR EVIDÊNCIA -->
-    <section id="enviar">
-      <h2>📝 Enviar Evidência</h2>
-      <p>Realizou uma ação ESG? Registre agora e ganhe pontos!</p>
-      
-      <div class="alert">
-        <strong>⚠️ Importante:</strong>
-        Prepare sua evidência antes de clicar (foto, print, certificado ou link). Máximo 2 envios por semana.
-      </div>
-      
-      <a href="https://airtable.com/appOjBln3sa0z3rtE/pagCEgCiCrXD1f1JH/form" class="btn" target="_blank">
-        🌱 Enviar Minha Evidência
-      </a>
-      
-      <p style="margin-top: 20px; font-size: 0.9em; color: #999;">
-        <strong>Após clicar:</strong> Formulário abrirá em nova aba. Preencha todos os campos e anexe sua evidência.
-      </p>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Jornada Regenera 2026</h1>
+            <p>Sua ação transforma o futuro. Sua jornada começa agora.</p>
+            <div class="hero-logo">
+                <img src="Nestle╠ü-KVRegenerar_semfundo.svg" alt="Nestlé Regenera">
+            </div>
+            <a href="#about" class="cta-button">Descobrir a Jornada</a>
+        </div>
     </section>
 
-    <!-- SEÇÃO 2: NÍVEIS -->
-    <section id="niveis">
-      <h2>🏆 Níveis de Progressão</h2>
-      <p>Quanto mais você participa, mais impacto você gera!</p>
-      
-      <div class="niveis-grid">
-        <div class="nivel-card">
-          <div class="icon">🌱</div>
-          <h3>Descobridor</h3>
-          <p class="pontos">0-14 pontos</p>
-          <p>Descobrindo o movimento regenerativo</p>
+    <!-- O QUE É A JORNADA -->
+    <section class="about" id="about">
+        <h2>O Que é a Jornada Regenera?</h2>
+        <p>Conheça a iniciativa que transforma suas ações em impacto</p>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Transformando Ações em Impacto</h3>
+                <p>A Jornada Regenera 2026 é um programa de engajamento que reconhece e celebra as contribuições de cada colaborador Nestlé para a sustentabilidade e a regeneração do planeta.</p>
+                <p>Cada ação que você realiza — seja aprendendo sobre sustentabilidade, participando de iniciativas, agindo no dia a dia ou influenciando colegas — gera pontos e o leva a níveis cada vez mais altos.</p>
+                <p>Durante 12 meses, você será parte de uma jornada coletiva rumo a um futuro mais verde e regenerativo. Sua participação importa. Seu impacto é real.</p>
+            </div>
+            <div class="about-visual">
+                <img src="Prancheta1.svg" alt="Jornada Regenera">
+            </div>
         </div>
-        
-        <div class="nivel-card">
-          <div class="icon">🔍</div>
-          <h3>Explorador</h3>
-          <p class="pontos">15-49 pontos</p>
-          <p>Explorando possibilidades de ação</p>
-        </div>
-        
-        <div class="nivel-card">
-          <div class="icon">⭐</div>
-          <h3>Multiplicador</h3>
-          <p class="pontos">50-99 pontos</p>
-          <p>Multiplicando impacto e inspirando</p>
-        </div>
-        
-        <div class="nivel-card">
-          <div class="icon">🏆</div>
-          <h3>Guardião</h3>
-          <p class="pontos">100+ pontos</p>
-          <p>Guardião da cultura regenerativa</p>
-        </div>
-      </div>
     </section>
 
-    <!-- SEÇÃO 3: COMO GANHAR PONTOS -->
-    <section id="pontos">
-      <h2>💡 Como Ganhar Pontos</h2>
-      
-      <div class="categorias-grid">
-        <div class="categoria-card">
-          <h3>🧠 APRENDER</h3>
-          <p class="pontos-valor">1 ponto</p>
-          <p>Consumir conteúdo, participar de eventos, estudar ESG</p>
-          <ul>
-            <li>Assistir treinamento</li>
-            <li>Ler artigo</li>
-            <li>Participar de webinar</li>
-            <li>Responder pesquisa</li>
-          </ul>
+    <!-- COMO FUNCIONA -->
+    <section class="how-it-works" id="how">
+        <h2>Como Funciona</h2>
+        <p>Um processo simples e transparente</p>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Escolha uma Ação</h3>
+                <p>Explore o catálogo de ações ESG e escolha aquela que mais faz sentido para você.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Realize a Ação</h3>
+                <p>Coloque em prática! Aprenda, participe, aja ou influencie colegas.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Envie a Evidência</h3>
+                <p>Registre sua ação anexando uma foto ou comprovante na plataforma.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Ganhe Pontos</h3>
+                <p>Após validação, seus pontos são somados e você sobe de nível!</p>
+            </div>
         </div>
-        
-        <div class="categoria-card">
-          <h3>🛠️ AGIR</h3>
-          <p class="pontos-valor">3 pontos</p>
-          <p>Executar projetos práticos e implementar melhorias</p>
-          <ul>
-            <li>Implementar composteira</li>
-            <li>Organizar coleta seletiva</li>
-            <li>Criar horta comunitária</li>
-            <li>Organizar workshop</li>
-          </ul>
-        </div>
-        
-        <div class="categoria-card">
-          <h3>📢 MOBILIZAR</h3>
-          <p class="pontos-valor">5 pontos</p>
-          <p>Liderar, inspirar e mobilizar colegas para ações coletivas</p>
-          <ul>
-            <li>Dar palestra</li>
-            <li>Mobilizar equipe</li>
-            <li>Recrutar voluntários</li>
-            <li>Liderar campanha</li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="alert" style="margin-top: 30px;">
-        <strong>📋 Regras Importantes:</strong>
-        • Máximo de 2 envios por semana<br>
-        • Todas ações precisam de evidência (foto, documento, link)<br>
-        • Validação em até 30 dias<br>
-        • Ações válidas a partir de 01/03/2026
-      </div>
     </section>
 
-    <!-- SEÇÃO 4: MEUS PONTOS -->
-    <section id="progresso">
-      <h2>📊 Meu Progresso</h2>
-      <p>Veja seus pontos, nível e histórico de evidências</p>
-      
-      <div class="email-box">
-        <label for="emailInput" style="font-size: 1.1em; font-weight: 600; color: var(--verde-regenera);">
-          Digite seu e-mail corporativo:
-        </label>
-        <div class="email-input">
-          <input 
-            type="email" 
-            id="emailInput" 
-            placeholder="seu.nome@nestle.com.br"
-            autocomplete="email"
-          >
-          <button onclick="verProgresso()">Ver Progresso</button>
+    <!-- NÍVEIS -->
+    <section class="levels">
+        <h2>Seus Níveis de Evolução</h2>
+        <p>Progresse e torne-se um Guardião da Regeneração</p>
+        <div class="levels-grid">
+            <div class="level-card">
+                <div class="level-icon">🌱</div>
+                <h3>Descobridor</h3>
+                <div class="points">0 - 49 pontos</div>
+                <p>Você está começando! Explore as ações, aprenda e dê seus primeiros passos na regeneração.</p>
+            </div>
+            <div class="level-card">
+                <div class="level-icon">🌿</div>
+                <h3>Explorador</h3>
+                <div class="points">50 - 149 pontos</div>
+                <p>Você já está engajado! Sua participação é regular e você já faz a diferença no dia a dia.</p>
+            </div>
+            <div class="level-card">
+                <div class="level-icon">🌳</div>
+                <h3>Multiplicador</h3>
+                <div class="points">150 - 299 pontos</div>
+                <p>Você é uma inspiração! Suas ações impactam e você já influencia colegas a participarem.</p>
+            </div>
+            <div class="level-card">
+                <div class="level-icon">🌲</div>
+                <h3>Guardião</h3>
+                <div class="points">300+ pontos</div>
+                <p>Parabéns! Você é um líder e defensor ativo da regeneração. Um verdadeiro Guardião!</p>
+            </div>
         </div>
-      </div>
-      
-      <div id="progressoContainer" class="iframe-container">
-        <iframe id="progressoFrame" src=""></iframe>
-      </div>
     </section>
 
-    <!-- SEÇÃO 5: RANKING -->
-    <section id="ranking">
-      <h2>🏆 Ranking</h2>
-      <p>Veja como sua unidade está se saindo e conheça os destaques individuais</p>
-      
-      <div style="background: var(--cinza-claro); padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-        <p style="margin: 0;"><strong>🥇 Medalhas:</strong> Top 3 pessoas e unidades ganham destaque especial!</p>
-      </div>
-      
-      <iframe 
-        src="https://airtable.com/embed/appOjBln3sa0z3rtE/shrmo5avHRMEBqiuY?backgroundColor=green&viewControls=on"
-        style="height: 700px;"
-      ></iframe>
+    <!-- CATEGORIAS -->
+    <section class="categories">
+        <h2>As 4 Categorias de Engajamento</h2>
+        <p>Explore diferentes formas de contribuir</p>
+        <div class="categories-grid">
+            <div class="category-card">
+                <div class="category-icon">📚</div>
+                <h3>Conhecimento</h3>
+                <p>Aprenda sobre sustentabilidade através de vídeos, artigos e cursos.</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">🤝</div>
+                <h3>Participação</h3>
+                <p>Envolva-se em eventos, workshops e discussões sobre regeneração.</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">✋</div>
+                <h3>Ação</h3>
+                <p>Coloque a mão na massa! Implemente práticas sustentáveis no seu dia a dia.</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">💡</div>
+                <h3>Influência</h3>
+                <p>Inspire e lidere outros. Compartilhe ideias e mentore colegas.</p>
+            </div>
+        </div>
     </section>
 
-    <!-- SEÇÃO 6: RAIDS -->
-    <section id="raids">
-      <h2>🎯 Campanhas RAIDs 2026</h2>
-      <p>Participe das campanhas temáticas e ganhe badges exclusivos!</p>
-      
-      <div class="categorias-grid">
-        <div class="categoria-card">
-          <h3>🍫 RAID Cacau</h3>
-          <p><strong>Quando:</strong> Março | 1 semana</p>
-          <p>Conhecimento ESG sobre marcas de chocolate da Nestlé</p>
-          <p><strong>Badge:</strong> 🍫</p>
+    <!-- PROGRESSO PESSOAL -->
+    <section class="progress" id="progress">
+        <h2>Seu Progresso na Jornada</h2>
+        <p>Acompanhe seu desenvolvimento e próximas metas</p>
+        <div class="progress-container">
+            <div class="progress-input-group">
+                <input type="email" id="emailInput" placeholder="Digite seu e-mail Nestlé">
+                <button onclick="searchProgress()">Ver Progresso</button>
+            </div>
+            <div class="progress-result" id="progressResult">
+                <h3 id="userName">Seu Nome</h3>
+                <p id="userLevel">Nível: Descobridor</p>
+                <p id="userPoints">Pontuação: 0 pontos</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                </div>
+                <div class="progress-info">
+                    <p id="nextLevelInfo">Faltam X pontos para o próximo nível</p>
+                </div>
+                <button class="cta-button" onclick="openFormModal()">Registrar Nova Conquista</button>
+            </div>
         </div>
-        
-        <div class="categoria-card">
-          <h3>🌱 RAID Meio Ambiente</h3>
-          <p><strong>Quando:</strong> Junho | 1 mês</p>
-          <p>Agricultura regenerativa transversal</p>
-          <p><strong>Badge:</strong> 🌱</p>
-        </div>
-        
-        <div class="categoria-card">
-          <h3>☕ RAID Café</h3>
-          <p><strong>Quando:</strong> Agosto | 10 dias</p>
-          <p>Rastreabilidade e reciclagem de cápsulas de café</p>
-          <p><strong>Badge:</strong> ☕</p>
-        </div>
-        
-        <div class="categoria-card">
-          <h3>🥛 RAID Leite</h3>
-          <p><strong>Quando:</strong> Outubro | TBD</p>
-          <p>Cadeia do leite e bem-estar animal</p>
-          <p><strong>Badge:</strong> 🥛</p>
-        </div>
-      </div>
     </section>
 
-  </div>
+    <!-- RANKING -->
+    <section class="ranking" id="ranking">
+        <h2>Ranking Global</h2>
+        <p>Inspire-se com os colaboradores mais engajados</p>
+        <div class="ranking-container">
+            <iframe class="airtable-embed" src="https://airtable.com/embed/shrmo5avHRMEBqiuY" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+        </div>
+    </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p style="font-size: 1.2em; margin-bottom: 15px;"><strong>© 2026 Jornada Regenera - Nestlé Brasil</strong></p>
-    <p>Operado por Auíri</p>
-    <p style="margin-top: 15px;">
-      <a href="mailto:regenera@nestle.com.br">Contato</a> |
-      <a href="#regulamento">Regulamento</a> |
-      <a href="#faq">FAQ</a>
-    </p>
-  </footer>
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <h2>Perguntas Frequentes</h2>
+        <p>Tire suas dúvidas sobre a Jornada Regenera</p>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Como envio minha evidência?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Clique no botão "Registrar Nova Conquista" e preencha o formulário com os detalhes da ação realizada. Anexe uma foto ou comprovante que demonstre a ação. Após a submissão, a equipe validará sua evidência em até 30 dias.</p>
+                </div>
+            </div>
 
-  <script>
-    function verProgresso() {
-      const email = document.getElementById('emailInput').value.trim();
-      
-      // Validar email
-      if (!email) {
-        alert('Por favor, digite seu e-mail');
-        return;
-      }
-      
-      if (!email.includes('@nestle.com.br')) {
-        alert('Por favor, use seu e-mail corporativo @nestle.com.br');
-        return;
-      }
-      
-      // Mostrar iframe com filtro por email
-      const container = document.getElementById('progressoContainer');
-      const frame = document.getElementById('progressoFrame');
-      
-      // Link da view de Ranking com filtro aplicado (como sugerido no guia)
-      frame.src = `https://airtable.com/embed/appOjBln3sa0z3rtE/shrmo5avHRMEBqiuY?filter_Email=${encodeURIComponent(email)}`;
-      
-      container.classList.add('show');
-      
-      // Scroll suave até o resultado
-      setTimeout(() => {
-        container.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 100);
-    }
-    
-    // Permitir Enter no input
-    document.getElementById('emailInput').addEventListener('keypress', function(e) {
-      if (e.key === 'Enter') {
-        verProgresso();
-      }
-    });
-  </script>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Quanto tempo leva para minha evidência ser validada?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>A validação das evidências é realizada pela equipe de moderação e pode levar até 30 dias. Você receberá uma notificação quando sua evidência for aprovada ou rejeitada.</p>
+                </div>
+            </div>
 
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Posso enviar várias ações por dia?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Sim! Você pode enviar quantas ações quiser, desde que cada uma tenha uma evidência clara e válida. Quanto mais você participar, mais pontos acumula e mais rápido sobe de nível.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>O que acontece se minha evidência for rejeitada?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Se sua evidência for rejeitada, você receberá uma notificação com o motivo. Você pode corrigir e reenviar a evidência quantas vezes precisar até que seja aprovada.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Qual é o objetivo final da Jornada?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>O objetivo é engajar todos os colaboradores Nestlé em uma jornada de 12 meses rumo à regeneração. Queremos que você não apenas acumule pontos, mas que internalize a importância da sustentabilidade e se torne um multiplicador de mudanças positivas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final">
+        <h2>Pronto para Começar?</h2>
+        <p>Registre sua primeira ação e faça parte da transformação</p>
+        <button class="cta-button" onclick="openFormModal()">Registrar Minha Primeira Ação</button>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Nestlé Brasil. Jornada Regenera. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- MODAL PARA FORMULÁRIO -->
+    <div class="modal" id="formModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeFormModal()">✕</button>
+            <h2>Registrar Minha Ação</h2>
+            <iframe class="airtable-embed" src="https://airtable.com/embed/shrXXXXXXXXXX" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+        </div>
+    </div>
+
+    <script>
+        // Toggle FAQ
+        function toggleFaq(element) {
+            element.parentElement.classList.toggle('active');
+        }
+
+        // Modal Functions
+        function openFormModal() {
+            document.getElementById('formModal').classList.add('active');
+        }
+
+        function closeFormModal() {
+            document.getElementById('formModal').classList.remove('active');
+        }
+
+        // Search Progress
+        function searchProgress() {
+            const email = document.getElementById('emailInput').value;
+            if (email) {
+                // Aqui você faria uma chamada à API do Airtable para buscar os dados
+                // Por enquanto, vamos simular
+                document.getElementById('progressResult').classList.add('active');
+                document.getElementById('userName').textContent = 'João Silva';
+                document.getElementById('userLevel').textContent = 'Nível: Explorador';
+                document.getElementById('userPoints').textContent = 'Pontuação: 85 pontos';
+                document.getElementById('progressFill').style.width = '70%';
+                document.getElementById('nextLevelInfo').textContent = 'Faltam 65 pontos para Multiplicador';
+            }
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('formModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeFormModal();
+            }
+        });
+    </script>
 </body>
 </html>
