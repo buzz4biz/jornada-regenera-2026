@@ -83,11 +83,43 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/zVnnHqrKHedizmJy.svg'); /* Nestle-KVRegenerar_circulo.svg */
-            background-size: cover;
-            background-position: center;
-            opacity: 0.2;
+            background: url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/MzPUtYZARlXNRolx.svg'); /* folha1.svg */
+            background-size: 300px;
+            background-repeat: repeat;
+            opacity: 0.1;
         }
+
+        .hero-orbital {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .orbital-element {
+            position: absolute;
+            width: 60px;
+            height: auto;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* Posicionamento dos elementos orbitais */
+        .el-abelha { top: 15%; left: 20%; animation-delay: 0s; }
+        .el-cacau { top: 20%; right: 15%; animation-delay: 1s; }
+        .el-caminhao { bottom: 20%; left: 15%; animation-delay: 2s; }
+        .el-cafe { bottom: 15%; right: 25%; animation-delay: 3s; }
+        .el-homem { top: 60%; left: 10%; animation-delay: 4s; }
+        .el-tucano { top: 10%; right: 30%; animation-delay: 5s; }
+        .el-vaca { bottom: 10%; left: 40%; animation-delay: 1.5s; }
 
         .hero-content {
             max-width: 800px;
@@ -554,12 +586,18 @@
 
     <main>
         <section class="hero">
+            <div class="hero-orbital">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/YaMeZWDqQANguydJ.svg" class="orbital-element el-abelha" alt="">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/ZTMGAVPBdbKjTTzT.svg" class="orbital-element el-cacau" alt="">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/eysgMSWqUMRDbcoj.svg" class="orbital-element el-caminhao" alt="">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/kZWuHCTHcifcMjAQ.svg" class="orbital-element el-cafe" alt="">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/yeTBmENpoqGtPVbU.svg" class="orbital-element el-homem" alt="">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/grZOJwBWbpYXlZom.svg" class="orbital-element el-tucano" alt="">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/XEvfDMaEtrKFOFOk.svg" class="orbital-element el-vaca" alt="">
+            </div>
             <div class="hero-content">
                 <h1>Jornada Regenera 2026</h1>
                 <p>Sua ação transforma o futuro. Sua jornada começa agora.</p>
-                <div class="hero-logo">
-                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/ixXhgadFUPYuAubO.svg" alt="Nestlé Regenera">
-                </div>
                 <a href="#about" class="cta-button">Descobrir a Jornada</a>
             </div>
         </section>
