@@ -89,38 +89,46 @@
             opacity: 0.1;
         }
 
-        .floating-elements-container {
-            position: absolute; /* Preso à página, sobe e desce com o scroll */
+        .hero-orbital-container {
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 1;
-            overflow: hidden;
+            z-index: 0;
         }
 
-        .floating-element {
+        .orbital-item {
             position: absolute;
-            width: 120px; /* Tamanho aumentado */
             height: auto;
-            animation: float 8s ease-in-out infinite;
-            opacity: 0.9;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+            transition: transform 0.5s ease;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-30px) rotate(8deg); }
+        /* Animações diferenciadas para naturalidade */
+        @keyframes float-slow {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(5px, -10px) rotate(2deg); }
+            66% { transform: translate(-5px, -5px) rotate(-1deg); }
         }
 
-        /* Distribuição por toda a página (ajustado para absolute) */
-        .el-abelha { top: 2%; left: 5%; animation-delay: 0s; }
-        .el-cacau { top: 12%; right: 5%; animation-delay: 1s; }
-        .el-caminhao { top: 25%; left: 2%; animation-delay: 2s; width: 140px; }
-        .el-cafe { top: 45%; right: 3%; animation-delay: 3s; width: 80px; }
-        .el-homem { top: 65%; left: 3%; animation-delay: 4s; }
-        .el-tucano { top: 8%; left: 80%; animation-delay: 5s; }
-        .el-vaca { top: 35%; right: 5%; animation-delay: 1.5s; width: 150px; }
+        @keyframes float-medium {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-10px, -15px) rotate(-3deg); }
+        }
+
+        .orbital-item { animation: float-slow 8s ease-in-out infinite; }
+        .orbital-item:nth-child(even) { animation: float-medium 10s ease-in-out infinite; }
+
+        /* Posicionamento Equilibrado na Hero */
+        .el-abelha { top: 15%; left: 15%; width: 70px; animation-delay: 0.5s; }
+        .el-tucano { top: 10%; right: 18%; width: 85px; animation-delay: 2s; }
+        .el-cacau { top: 45%; right: 12%; width: 90px; animation-delay: 1.2s; }
+        .el-vaca { bottom: 15%; right: 20%; width: 130px; animation-delay: 3s; }
+        .el-caminhao { bottom: 12%; left: 18%; width: 120px; animation-delay: 4.5s; }
+        .el-homem { top: 50%; left: 10%; width: 100px; animation-delay: 1.8s; }
+        .el-cafe { bottom: 35%; left: 25%; width: 65px; animation-delay: 0.2s; }
 
         .hero-content {
             max-width: 800px;
@@ -586,17 +594,16 @@
     </header>
 
     <main>
-    <div class="floating-elements-container">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/YaMeZWDqQANguydJ.svg" class="floating-element el-abelha" alt="">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/ZTMGAVPBdbKjTTzT.svg" class="floating-element el-cacau" alt="">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/eysgMSWqUMRDbcoj.svg" class="floating-element el-caminhao" alt="">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/kZWuHCTHcifcMjAQ.svg" class="floating-element el-cafe" alt="">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/yeTBmENpoqGtPVbU.svg" class="floating-element el-homem" alt="">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/grZOJwBWbpYXlZom.svg" class="floating-element el-tucano" alt="">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/XEvfDMaEtrKFOFOk.svg" class="floating-element el-vaca" alt="">
-    </div>
-    <main>
         <section class="hero">
+            <div class="hero-orbital-container">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/YaMeZWDqQANguydJ.svg" class="orbital-item el-abelha" alt="">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/grZOJwBWbpYXlZom.svg" class="orbital-item el-tucano" alt="">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/ZTMGAVPBdbKjTTzT.svg" class="orbital-item el-cacau" alt="">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/XEvfDMaEtrKFOFOk.svg" class="orbital-item el-vaca" alt="">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/eysgMSWqUMRDbcoj.svg" class="orbital-item el-caminhao" alt="">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/yeTBmENpoqGtPVbU.svg" class="orbital-item el-homem" alt="">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/kZWuHCTHcifcMjAQ.svg" class="orbital-item el-cafe" alt="">
+            </div>
             <div class="hero-content">
                 <h1>Jornada Regenera 2026</h1>
                 <p>Sua ação transforma o futuro. Sua jornada começa agora.</p>
