@@ -68,25 +68,34 @@
 
         /* ===== HERO SECTION ===== */
         .hero {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-            color: var(--color-white);
-            padding: 6rem 2rem;
+            height: 85vh;
+            background: radial-gradient(circle at center, #388e3c 0%, #1b5e20 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            color: var(--color-white);
+            padding: 0 2rem;
             position: relative;
             overflow: hidden;
         }
 
-        .hero::before {
+        /* Efeito de Raios de Sol */
+        .hero::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/MzPUtYZARlXNRolx.svg'); /* folha1.svg */
-            background-size: 300px;
-            background-repeat: repeat;
-            opacity: 0.1;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(255,255,255,0.05) 10deg, transparent 20deg);
+            animation: rotate-sun 60s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes rotate-sun {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         .hero-orbital-container {
@@ -96,57 +105,59 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 0;
+            z-index: 1;
         }
 
         .orbital-item {
             position: absolute;
             height: auto;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
-            transition: transform 0.5s ease;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Animações diferenciadas para naturalidade */
-        @keyframes float-slow {
+        @keyframes float-hero {
             0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(5px, -10px) rotate(2deg); }
-            66% { transform: translate(-5px, -5px) rotate(-1deg); }
+            25% { transform: translate(15px, -20px) rotate(3deg); }
+            50% { transform: translate(-10px, -30px) rotate(-2deg); }
+            75% { transform: translate(-20px, -10px) rotate(1deg); }
         }
 
-        @keyframes float-medium {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(-10px, -15px) rotate(-3deg); }
-        }
+        .orbital-item { animation: float-hero 12s ease-in-out infinite; }
 
-        .orbital-item { animation: float-slow 8s ease-in-out infinite; }
-        .orbital-item:nth-child(even) { animation: float-medium 10s ease-in-out infinite; }
-
-        /* Posicionamento Equilibrado na Hero */
-        .el-abelha { top: 15%; left: 15%; width: 70px; animation-delay: 0.5s; }
-        .el-tucano { top: 10%; right: 18%; width: 85px; animation-delay: 2s; }
-        .el-cacau { top: 45%; right: 12%; width: 90px; animation-delay: 1.2s; }
-        .el-vaca { bottom: 15%; right: 20%; width: 130px; animation-delay: 3s; }
-        .el-caminhao { bottom: 12%; left: 18%; width: 120px; animation-delay: 4.5s; }
-        .el-homem { top: 50%; left: 10%; width: 100px; animation-delay: 1.8s; }
-        .el-cafe { bottom: 35%; left: 25%; width: 65px; animation-delay: 0.2s; }
+        /* Posicionamento de Impacto */
+        .el-abelha { top: 15%; left: 10%; width: 100px; animation-delay: -2s; }
+        .el-tucano { top: 12%; right: 8%; width: 140px; animation-delay: -5s; }
+        .el-cacau { bottom: 20%; right: 10%; width: 130px; animation-delay: -1s; }
+        .el-vaca { bottom: 10%; right: 25%; width: 200px; animation-delay: -8s; }
+        .el-caminhao { bottom: 15%; left: 5%; width: 180px; animation-delay: -3s; }
+        .el-homem { top: 40%; left: 5%; width: 150px; animation-delay: -6s; }
+        .el-cafe { bottom: 30%; left: 20%; width: 90px; animation-delay: -4s; }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             position: relative;
-            z-index: 1;
+            z-index: 3;
         }
 
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
+            font-size: 5.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to bottom, #ffffff 60%, #c8e6c9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+            letter-spacing: -2px;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+            color: rgba(255,255,255,0.95);
+            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         .hero-logo {
