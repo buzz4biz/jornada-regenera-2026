@@ -514,34 +514,91 @@
 
         /* ===== CTA FINAL ===== */
         .cta-final {
-            background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+            background-color: var(--color-primary);
+            background-image: url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/HPYRcBlupCLaEkFf.svg'); /* Guirlanda com texto e fundo verde */
+            background-size: cover;
+            background-position: center;
             color: var(--color-white);
             text-align: center;
-            padding: 4rem 2rem;
+            padding: 8rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-final::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 122, 51, 0.85);
+            z-index: 1;
+        }
+
+        .cta-final-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .cta-final h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
             color: var(--color-white);
             margin-bottom: 1.5rem;
+            letter-spacing: -1px;
         }
 
         .cta-final p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+            font-size: 1.4rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
         }
 
         /* ===== FOOTER ===== */
         footer {
-            background-color: var(--color-primary);
+            background-color: #005a26; /* Verde mais escuro para o footer */
             color: var(--color-white);
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
+            padding: 4rem 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
 
-        footer p {
-            margin: 0;
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .footer-logos {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            opacity: 0.8;
+        }
+
+        .footer-logo-nestle {
+            height: 40px;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-divider {
+            width: 1px;
+            height: 30px;
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        .footer-info {
+            text-align: center;
+            font-size: 1rem;
+            opacity: 0.7;
+            line-height: 1.6;
+        }
+
+        .footer-info strong {
+            color: var(--color-white);
+            opacity: 1;
         }
 
         /* ===== RESPONSIVIDADE ===== */
@@ -798,14 +855,26 @@
         </section>
 
         <section class="cta-final">
-            <h2>Pronto para Começar?</h2>
-            <p>Registre sua primeira ação e faça parte da transformação</p>
-            <a href="https://airtable.com/shrXXXXXXXXXX" class="cta-button" target="_blank">Registrar Minha Primeira Ação</a>
+            <div class="cta-final-content">
+                <h2>Pronto para Começar?</h2>
+                <p>Registre sua primeira ação e faça parte da transformação rumo a um futuro regenerativo.</p>
+                <a href="https://airtable.com/shrXXXXXXXXXX" class="cta-button" target="_blank">Registrar Minha Primeira Ação</a>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>Um projeto Auíri. Inovação para Impacto.</p>
+        <div class="footer-container">
+            <div class="footer-logos">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/CpJJqyQNVnthBKZd.svg" class="footer-logo-nestle" alt="Nestlé">
+                <div class="footer-divider"></div>
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/RQGsdHYTJwvRLJiI.svg" style="height: 30px; filter: brightness(0) invert(1);" alt="Regenerar">
+            </div>
+            <div class="footer-info">
+                <p>Um projeto <strong>Auíri</strong>. Inovação para Impacto.</p>
+                <p>&copy; 2026 Nestlé Brasil. Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
 
     <script>
