@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jornada Regenera 2026 - Transforme suas ações ESG em impacto mensurável">
+  <title>Jornada Regenera 2026 | Nestlé Brasil</title>
+  
+  <style>
+    /* CORES DO GUIA DE MARCA REGENERAR */
+    :root {
+      --verde-regenera: #006937;
+      --marrom-regenera: #64513D;
+      --bege-kraft: #FED4A0;
+      --verde-claro: #739865;
+      --branco: #FFFFFF;
+      --cinza-claro: #F5F5F5;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: var(--cinza-claro);
+    }
+    
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, var(--verde-regenera) 0%, var(--verde-claro) 100%);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    
+    header .subtitle {
+      font-size: 1.5em;
+      font-weight: 300;
+      opacity: 0.95;
+      margin-bottom: 30px;
+    }
+    
+    header p {
+      font-size: 1.1em;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+    
+    /* CONTAINER */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    /* SEÇÕES */
+    section {
+      background: white;
+      margin: 30px 0;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    section h2 {
+      color: var(--verde-regenera);
+      font-size: 2em;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid var(--bege-kraft);
+    }
+    
+    section p {
+      font-size: 1.1em;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    
+    /* BOTÕES */
+    .btn {
+      display: inline-block;
+      background: var(--verde-regenera);
+      color: white;
+      padding: 18px 40px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1.2em;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .btn:hover {
+      background: var(--marrom-regenera);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    
+    .btn-secondary {
+      background: var(--marrom-regenera);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--verde-regenera);
+    }
+    
+    /* NÍVEIS */
+    .niveis-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    
+    .nivel-card {
+      background: linear-gradient(135deg, var(--verde-claro) 0%, var(--verde-regenera) 100%);
+      color: white;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    
+    .nivel-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .nivel-card .icon {
+      font-size: 4em;
+      margin-bottom: 10px;
+    }
+    
+    .nivel-card h3 {
+      font-size: 1.5em;
+      margin-bottom: 5px;
+    }
+    
+    .nivel-card .pontos {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
+    
+    /* INPUT EMAIL */
+    .email-box {
+      background: var(--cinza-claro);
+      padding: 30px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    
+    .email-input {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    
+    .email-input input {
+      flex: 1;
+      padding: 15px;
+      border: 2px solid var(--verde-regenera);
+      border-radius: 6px;
+      font-size: 1.1em;
+    }
+    
+    .email-input button {
+      padding: 15px 30px;
+      background: var(--verde-regenera);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1em;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .email-input button:hover {
+      background: var(--marrom-regenera);
+    }
+    
+    /* IFRAME */
+    .iframe-container {
+      margin-top: 30px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: none;
+    }
+    
+    .iframe-container.show {
+      display: block;
+    }
+    
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+    
+    /* CATEGORIAS */
+    .categorias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+    
+    .categoria-card {
+      background: var(--cinza-claro);
+      padding: 25px;
+      border-radius: 12px;
+      border-left: 5px solid var(--verde-regenera);
+    }
+    
+    .categoria-card h3 {
+      color: var(--verde-regenera);
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+    
+    .categoria-card .pontos-valor {
+      font-size: 2em;
+      font-weight: 700;
+      color: var(--marrom-regenera);
+      margin-bottom: 10px;
+    }
+    
+    .categoria-card ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 15px;
+    }
+    
+    .categoria-card li {
+      padding: 5px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+    
+    .categoria-card li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--verde-regenera);
+      font-weight: bold;
+    }
+    
+    /* FOOTER */
+    footer {
+      background: var(--verde-regenera);
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 50px;
+    }
+    
+    footer p {
+      margin: 5px 0;
+    }
+    
+    footer a {
+      color: var(--bege-kraft);
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    
+    footer a:hover {
+      text-decoration: underline;
+    }
+    
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+      
+      header .subtitle {
+        font-size: 1.2em;
+      }
+      
+      section {
+        padding: 25px;
+      }
+      
+      .email-input {
+        flex-direction: column;
+      }
+      
+      .niveis-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* ALERTA */
+    .alert {
+      background: #FFF3CD;
+      border: 2px solid #FFE69C;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+      color: #856404;
+    }
+    
+    .alert strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>🌱 Jornada Regenera 2026</h1>
+    <p class="subtitle">rê.generar é nutrir o que faz bem</p>
+    <p>Transforme suas ações ESG em impacto mensurável. Ganhe pontos, suba de nível e inspire outros colaboradores!</p>
+  </header>
+
+  <div class="container">
+    
+    <!-- SEÇÃO 1: ENVIAR EVIDÊNCIA -->
+    <section id="enviar">
+      <h2>📝 Enviar Evidência</h2>
+      <p>Realizou uma ação ESG? Registre agora e ganhe pontos!</p>
+      
+      <div class="alert">
+        <strong>⚠️ Importante:</strong>
+        Prepare sua evidência antes de clicar (foto, print, certificado ou link). Máximo 2 envios por semana.
+      </div>
+      
+      <a href="https://airtable.com/appOjBln3sa0z3rtE/pagCEgCiCrXD1f1JH/form" class="btn" target="_blank">
+        🌱 Enviar Minha Evidência
+      </a>
+      
+      <p style="margin-top: 20px; font-size: 0.9em; color: #999;">
+        <strong>Após clicar:</strong> Formulário abrirá em nova aba. Preencha todos os campos e anexe sua evidência.
+      </p>
+    </section>
+
+    <!-- SEÇÃO 2: NÍVEIS -->
+    <section id="niveis">
+      <h2>🏆 Níveis de Progressão</h2>
+      <p>Quanto mais você participa, mais impacto você gera!</p>
+      
+      <div class="niveis-grid">
+        <div class="nivel-card">
+          <div class="icon">🌱</div>
+          <h3>Descobridor</h3>
+          <p class="pontos">0-14 pontos</p>
+          <p>Descobrindo o movimento regenerativo</p>
+        </div>
+        
+        <div class="nivel-card">
+          <div class="icon">🔍</div>
+          <h3>Explorador</h3>
+          <p class="pontos">15-49 pontos</p>
+          <p>Explorando possibilidades de ação</p>
+        </div>
+        
+        <div class="nivel-card">
+          <div class="icon">⭐</div>
+          <h3>Multiplicador</h3>
+          <p class="pontos">50-99 pontos</p>
+          <p>Multiplicando impacto e inspirando</p>
+        </div>
+        
+        <div class="nivel-card">
+          <div class="icon">🏆</div>
+          <h3>Guardião</h3>
+          <p class="pontos">100+ pontos</p>
+          <p>Guardião da cultura regenerativa</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 3: COMO GANHAR PONTOS -->
+    <section id="pontos">
+      <h2>💡 Como Ganhar Pontos</h2>
+      
+      <div class="categorias-grid">
+        <div class="categoria-card">
+          <h3>🧠 APRENDER</h3>
+          <p class="pontos-valor">1 ponto</p>
+          <p>Consumir conteúdo, participar de eventos, estudar ESG</p>
+          <ul>
+            <li>Assistir treinamento</li>
+            <li>Ler artigo</li>
+            <li>Participar de webinar</li>
+            <li>Responder pesquisa</li>
+          </ul>
+        </div>
+        
+        <div class="categoria-card">
+          <h3>🛠️ AGIR</h3>
+          <p class="pontos-valor">3 pontos</p>
+          <p>Executar projetos práticos e implementar melhorias</p>
+          <ul>
+            <li>Implementar composteira</li>
+            <li>Organizar coleta seletiva</li>
+            <li>Criar horta comunitária</li>
+            <li>Organizar workshop</li>
+          </ul>
+        </div>
+        
+        <div class="categoria-card">
+          <h3>📢 MOBILIZAR</h3>
+          <p class="pontos-valor">5 pontos</p>
+          <p>Liderar, inspirar e mobilizar colegas para ações coletivas</p>
+          <ul>
+            <li>Dar palestra</li>
+            <li>Mobilizar equipe</li>
+            <li>Recrutar voluntários</li>
+            <li>Liderar campanha</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="alert" style="margin-top: 30px;">
+        <strong>📋 Regras Importantes:</strong>
+        • Máximo de 2 envios por semana<br>
+        • Todas ações precisam de evidência (foto, documento, link)<br>
+        • Validação em até 30 dias<br>
+        • Ações válidas a partir de 01/03/2026
+      </div>
+    </section>
+
+    <!-- SEÇÃO 4: MEUS PONTOS -->
+    <section id="progresso">
+      <h2>📊 Meu Progresso</h2>
+      <p>Veja seus pontos, nível e histórico de evidências</p>
+      
+      <div class="email-box">
+        <label for="emailInput" style="font-size: 1.1em; font-weight: 600; color: var(--verde-regenera);">
+          Digite seu e-mail corporativo:
+        </label>
+        <div class="email-input">
+          <input 
+            type="email" 
+            id="emailInput" 
+            placeholder="seu.nome@nestle.com.br"
+            autocomplete="email"
+          >
+          <button onclick="verProgresso()">Ver Progresso</button>
+        </div>
+      </div>
+      
+      <div id="progressoContainer" class="iframe-container">
+        <iframe id="progressoFrame" src=""></iframe>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 5: RANKING -->
+    <section id="ranking">
+      <h2>🏆 Ranking</h2>
+      <p>Veja como sua unidade está se saindo e conheça os destaques individuais</p>
+      
+      <div style="background: var(--cinza-claro); padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+        <p style="margin: 0;"><strong>🥇 Medalhas:</strong> Top 3 pessoas e unidades ganham destaque especial!</p>
+      </div>
+      
+      <iframe 
+        src="https://airtable.com/embed/appOjBln3sa0z3rtE/shrmo5avHRMEBqiuY?backgroundColor=green&viewControls=on"
+        style="height: 700px;"
+      ></iframe>
+    </section>
+
+    <!-- SEÇÃO 6: RAIDS -->
+    <section id="raids">
+      <h2>🎯 Campanhas RAIDs 2026</h2>
+      <p>Participe das campanhas temáticas e ganhe badges exclusivos!</p>
+      
+      <div class="categorias-grid">
+        <div class="categoria-card">
+          <h3>🍫 RAID Cacau</h3>
+          <p><strong>Quando:</strong> Março | 1 semana</p>
+          <p>Conhecimento ESG sobre marcas de chocolate da Nestlé</p>
+          <p><strong>Badge:</strong> 🍫</p>
+        </div>
+        
+        <div class="categoria-card">
+          <h3>🌱 RAID Meio Ambiente</h3>
+          <p><strong>Quando:</strong> Junho | 1 mês</p>
+          <p>Agricultura regenerativa transversal</p>
+          <p><strong>Badge:</strong> 🌱</p>
+        </div>
+        
+        <div class="categoria-card">
+          <h3>☕ RAID Café</h3>
+          <p><strong>Quando:</strong> Agosto | 10 dias</p>
+          <p>Rastreabilidade e reciclagem de cápsulas de café</p>
+          <p><strong>Badge:</strong> ☕</p>
+        </div>
+        
+        <div class="categoria-card">
+          <h3>🥛 RAID Leite</h3>
+          <p><strong>Quando:</strong> Outubro | TBD</p>
+          <p>Cadeia do leite e bem-estar animal</p>
+          <p><strong>Badge:</strong> 🥛</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p style="font-size: 1.2em; margin-bottom: 15px;"><strong>© 2026 Jornada Regenera - Nestlé Brasil</strong></p>
+    <p>Operado por Auíri</p>
+    <p style="margin-top: 15px;">
+      <a href="mailto:regenera@nestle.com.br">Contato</a> |
+      <a href="#regulamento">Regulamento</a> |
+      <a href="#faq">FAQ</a>
+    </p>
+  </footer>
+
+  <script>
+    function verProgresso() {
+      const email = document.getElementById('emailInput').value.trim();
+      
+      // Validar email
+      if (!email) {
+        alert('Por favor, digite seu e-mail');
+        return;
+      }
+      
+      if (!email.includes('@nestle.com.br')) {
+        alert('Por favor, use seu e-mail corporativo @nestle.com.br');
+        return;
+      }
+      
+      // Mostrar iframe com filtro por email
+      const container = document.getElementById('progressoContainer');
+      const frame = document.getElementById('progressoFrame');
+      
+      // Link da view de Ranking com filtro aplicado (como sugerido no guia)
+      frame.src = `https://airtable.com/embed/appOjBln3sa0z3rtE/shrmo5avHRMEBqiuY?filter_Email=${encodeURIComponent(email)}`;
+      
+      container.classList.add('show');
+      
+      // Scroll suave até o resultado
+      setTimeout(() => {
+        container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+    
+    // Permitir Enter no input
+    document.getElementById('emailInput').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        verProgresso();
+      }
+    });
+  </script>
+
+</body>
+</html>
