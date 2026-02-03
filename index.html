@@ -557,49 +557,55 @@
 
         /* ===== FOOTER ===== */
         footer {
-            background-color: #005a26; /* Verde mais escuro para o footer */
-            color: var(--color-white);
-            padding: 4rem 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            padding: 3rem 2rem 2rem;
+            border-top: 1px solid #333;
         }
 
         .footer-container {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
             gap: 2rem;
         }
 
-        .footer-logos {
+        .footer-left {
             display: flex;
             align-items: center;
-            gap: 3rem;
-            opacity: 0.8;
+            gap: 1.5rem;
         }
 
-        .footer-logo-nestle {
-            height: 40px;
-            filter: brightness(0) invert(1);
+        .footer-logo {
+            height: 35px;
+            opacity: 0.9;
         }
 
-        .footer-divider {
-            width: 1px;
-            height: 30px;
-            background-color: rgba(255,255,255,0.2);
+        .footer-text {
+            font-size: 0.9rem;
+            color: #999;
         }
 
-        .footer-info {
-            text-align: center;
-            font-size: 1rem;
-            opacity: 0.7;
-            line-height: 1.6;
+        .footer-right {
+            text-align: right;
+            font-size: 0.85rem;
+            color: #666;
         }
 
-        .footer-info strong {
-            color: var(--color-white);
-            opacity: 1;
+        .footer-right p {
+            margin: 0.3rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-right {
+                text-align: center;
+            }
         }
 
         /* ===== RESPONSIVIDADE ===== */
@@ -673,7 +679,6 @@
                 <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/XEvfDMaEtrKFOFOk.svg" class="hero-el el-vaca" alt="">
             </div>
             <div class="hero-content">
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/RQGsdHYTJwvRLJiI.svg" class="hero-assinatura" alt="Regenerar Nestlé">
                 <h1>Jornada Regenera 2026</h1>
                 <p>Sua ação transforma o futuro. Uma iniciativa para cultivar um amanhã mais sustentável e regenerativo.</p>
                 <a href="#about" class="cta-button">Descobrir a Jornada</a>
@@ -866,14 +871,12 @@
 
     <footer>
         <div class="footer-container">
-            <div class="footer-logos">
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/CpJJqyQNVnthBKZd.svg" class="footer-logo-nestle" alt="Nestlé">
-                <div class="footer-divider"></div>
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/RQGsdHYTJwvRLJiI.svg" style="height: 30px; filter: brightness(0) invert(1);" alt="Regenerar">
+            <div class="footer-left">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/CpJJqyQNVnthBKZd.svg" class="footer-logo" alt="Nestlé">
+                <span class="footer-text">Um projeto Auíri</span>
             </div>
-            <div class="footer-info">
-                <p>Um projeto <strong>Auíri</strong>. Inovação para Impacto.</p>
-                <p>&copy; 2026 Nestlé Brasil. Todos os direitos reservados.</p>
+            <div class="footer-right">
+                <p>&copy; 2026 Nestlé Brasil</p>
             </div>
         </div>
     </footer>
