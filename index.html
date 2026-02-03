@@ -12,16 +12,15 @@
         }
 
         :root {
-            --color-primary: #2d5016;
-            --color-secondary: #5a9d3d;
-            --color-accent: #8bc34a;
-            --color-light: #f5f5f5;
+            --color-primary: #007a33; /* Verde oficial Nestlé Regenerar */
+            --color-secondary: #00a651;
+            --color-accent: #ffcc00;
+            --color-light: #f4f9f4;
             --color-white: #ffffff;
-            --color-text: #333333;
-            --color-text-light: #444444; /* Ajustado para melhor legibilidade */
-            --color-border: #e0e0e0;
-            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            --transition: all 0.3s ease;
+            --color-text: #1e1e1e;
+            --color-text-light: #4a4a4a;
+            --color-border: #d1d1d1;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         body {
@@ -68,8 +67,11 @@
 
         /* ===== HERO SECTION ===== */
         .hero {
-            height: 85vh;
-            background: radial-gradient(circle at center, #388e3c 0%, #1b5e20 100%);
+            height: 90vh;
+            background-color: var(--color-primary);
+            background-image: url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/ghFXIdYsPzAYEQYZ.svg'); /* folha3.svg */
+            background-size: 400px;
+            background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -80,85 +82,84 @@
             overflow: hidden;
         }
 
-        /* Efeito de Raios de Sol */
-        .hero::after {
+        .hero::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(255,255,255,0.05) 10deg, transparent 20deg);
-            animation: rotate-sun 60s linear infinite;
-            pointer-events: none;
-        }
-
-        @keyframes rotate-sun {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .hero-orbital-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(180deg, rgba(0,122,51,0.7) 0%, rgba(0,122,51,0.9) 100%);
             z-index: 1;
         }
 
-        .orbital-item {
+        .hero-guirlanda {
             position: absolute;
-            height: auto;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 85vh;
+            max-width: 90%;
+            opacity: 0.15;
+            z-index: 0;
+            animation: rotate-slow 120s linear infinite;
         }
 
-        @keyframes float-hero {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(15px, -20px) rotate(3deg); }
-            50% { transform: translate(-10px, -30px) rotate(-2deg); }
-            75% { transform: translate(-20px, -10px) rotate(1deg); }
+        @keyframes rotate-slow {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
         }
-
-        .orbital-item { animation: float-hero 12s ease-in-out infinite; }
-
-        /* Posicionamento de Impacto */
-        .el-abelha { top: 15%; left: 10%; width: 100px; animation-delay: -2s; }
-        .el-tucano { top: 12%; right: 8%; width: 140px; animation-delay: -5s; }
-        .el-cacau { bottom: 20%; right: 10%; width: 130px; animation-delay: -1s; }
-        .el-vaca { bottom: 10%; right: 25%; width: 200px; animation-delay: -8s; }
-        .el-caminhao { bottom: 15%; left: 5%; width: 180px; animation-delay: -3s; }
-        .el-homem { top: 40%; left: 5%; width: 150px; animation-delay: -6s; }
-        .el-cafe { bottom: 30%; left: 20%; width: 90px; animation-delay: -4s; }
 
         .hero-content {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             position: relative;
-            z-index: 3;
+            z-index: 10;
+        }
+
+        .hero-assinatura {
+            width: 280px;
+            margin-bottom: 2.5rem;
+            filter: brightness(0) invert(1);
         }
 
         .hero h1 {
-            font-size: 5.5rem;
-            font-weight: 900;
+            font-size: 4.5rem;
+            font-weight: 800;
             line-height: 1.1;
             margin-bottom: 1.5rem;
-            background: linear-gradient(to bottom, #ffffff 60%, #c8e6c9 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
-            letter-spacing: -2px;
+            letter-spacing: -1px;
         }
 
         .hero p {
-            font-size: 1.8rem;
-            font-weight: 300;
-            margin-bottom: 3rem;
-            color: rgba(255,255,255,0.95);
-            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 3.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
         }
+
+        .hero-elements {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .hero-el {
+            position: absolute;
+            height: auto;
+            animation: float-subtle 10s ease-in-out infinite;
+        }
+
+        @keyframes float-subtle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .el-tucano { top: 15%; right: 10%; width: 120px; animation-delay: -2s; }
+        .el-abelha { top: 25%; left: 8%; width: 80px; animation-delay: -5s; }
+        .el-cacau { bottom: 15%; right: 12%; width: 100px; animation-delay: -1s; }
+        .el-vaca { bottom: 10%; left: 15%; width: 160px; animation-delay: -7s; }
 
         .hero-logo {
             margin: 2rem 0;
@@ -606,18 +607,17 @@
 
     <main>
         <section class="hero">
-            <div class="hero-orbital-container">
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/YaMeZWDqQANguydJ.svg" class="orbital-item el-abelha" alt="">
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/grZOJwBWbpYXlZom.svg" class="orbital-item el-tucano" alt="">
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/ZTMGAVPBdbKjTTzT.svg" class="orbital-item el-cacau" alt="">
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/XEvfDMaEtrKFOFOk.svg" class="orbital-item el-vaca" alt="">
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/eysgMSWqUMRDbcoj.svg" class="orbital-item el-caminhao" alt="">
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/yeTBmENpoqGtPVbU.svg" class="orbital-item el-homem" alt="">
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/kZWuHCTHcifcMjAQ.svg" class="orbital-item el-cafe" alt="">
+            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/HPYRcBlupCLaEkFf.svg" class="hero-guirlanda" alt="">
+            <div class="hero-elements">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/grZOJwBWbpYXlZom.svg" class="hero-el el-tucano" alt="">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/YaMeZWDqQANguydJ.svg" class="hero-el el-abelha" alt="">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/ZTMGAVPBdbKjTTzT.svg" class="hero-el el-cacau" alt="">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/XEvfDMaEtrKFOFOk.svg" class="hero-el el-vaca" alt="">
             </div>
             <div class="hero-content">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/RQGsdHYTJwvRLJiI.svg" class="hero-assinatura" alt="Regenerar Nestlé">
                 <h1>Jornada Regenera 2026</h1>
-                <p>Sua ação transforma o futuro. Sua jornada começa agora.</p>
+                <p>Sua ação transforma o futuro. Uma iniciativa para cultivar um amanhã mais sustentável e regenerativo.</p>
                 <a href="#about" class="cta-button">Descobrir a Jornada</a>
             </div>
         </section>
