@@ -90,13 +90,13 @@
         }
 
         .floating-elements-container {
-            position: fixed; /* Fixado para cobrir toda a tela durante o scroll */
+            position: absolute; /* Preso à página, sobe e desce com o scroll */
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 1; /* Acima do fundo, abaixo do conteúdo interativo */
+            z-index: 1;
             overflow: hidden;
         }
 
@@ -113,14 +113,14 @@
             50% { transform: translateY(-30px) rotate(8deg); }
         }
 
-        /* Distribuição por toda a página */
-        .el-abelha { top: 5%; left: 10%; animation-delay: 0s; }
-        .el-cacau { top: 15%; right: 5%; animation-delay: 1s; }
-        .el-caminhao { top: 40%; left: 5%; animation-delay: 2s; width: 140px; }
-        .el-cafe { top: 60%; right: 8%; animation-delay: 3s; width: 80px; }
-        .el-homem { top: 80%; left: 8%; animation-delay: 4s; }
-        .el-tucano { top: 25%; left: 75%; animation-delay: 5s; }
-        .el-vaca { top: 50%; right: 15%; animation-delay: 1.5s; width: 150px; }
+        /* Distribuição por toda a página (ajustado para absolute) */
+        .el-abelha { top: 2%; left: 5%; animation-delay: 0s; }
+        .el-cacau { top: 12%; right: 5%; animation-delay: 1s; }
+        .el-caminhao { top: 25%; left: 2%; animation-delay: 2s; width: 140px; }
+        .el-cafe { top: 45%; right: 3%; animation-delay: 3s; width: 80px; }
+        .el-homem { top: 65%; left: 3%; animation-delay: 4s; }
+        .el-tucano { top: 8%; left: 80%; animation-delay: 5s; }
+        .el-vaca { top: 35%; right: 5%; animation-delay: 1.5s; width: 150px; }
 
         .hero-content {
             max-width: 800px;
