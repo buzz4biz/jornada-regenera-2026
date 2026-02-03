@@ -534,9 +534,12 @@
         /* ===== CTA FINAL ===== */
         .cta-final {
             background-color: var(--color-primary);
-            background-image: url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/HPYRcBlupCLaEkFf.svg'); /* Guirlanda com texto e fundo verde */
-            background-size: cover;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(0,122,51,0.4) 0%, transparent 70%),
+                url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/ghFXIdYsPzAYEQYZ.svg'); /* folha3.svg */
+            background-size: cover, 600px;
             background-position: center;
+            background-repeat: no-repeat, repeat;
             color: var(--color-white);
             text-align: center;
             padding: 8rem 2rem;
@@ -548,9 +551,28 @@
             content: '';
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 122, 51, 0.85);
+            background: linear-gradient(180deg, rgba(0,77,33,0.2) 0%, rgba(0,77,33,0.8) 100%);
             z-index: 1;
         }
+
+        .cta-final-elements {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .cta-el {
+            position: absolute;
+            height: auto;
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.3));
+            animation: float-organic 15s ease-in-out infinite;
+        }
+
+        .cta-el-tucano { top: 10%; right: 8%; width: 140px; animation-delay: -2s; }
+        .cta-el-abelha { top: 15%; left: 5%; width: 80px; animation-delay: -5s; }
+        .cta-el-cacau { bottom: 15%; right: 10%; width: 110px; animation-delay: -1s; }
+        .cta-el-vaca { bottom: 10%; left: 8%; width: 170px; animation-delay: -7s; }
 
         .cta-final-content {
             position: relative;
@@ -575,41 +597,42 @@
 
         /* ===== FOOTER ===== */
         footer {
-            background-color: #1a1a1a;
-            color: #e0e0e0;
-            padding: 3rem 2rem 2rem;
-            border-top: 1px solid #333;
+            background-color: #f8f8f8; /* Cinza claro para contraste com logo preto */
+            color: #1e1e1e;
+            padding: 2.5rem 2rem;
+            border-top: 1px solid #e0e0e0;
         }
 
         .footer-container {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            gap: 2rem;
+            gap: 1rem;
+            text-align: center;
         }
 
         .footer-left {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1rem;
+            justify-content: center;
         }
 
         .footer-logo {
-            height: 35px;
-            opacity: 0.9;
+            height: 40px;
+            opacity: 1;
         }
 
         .footer-text {
-            font-size: 0.9rem;
-            color: #999;
+            font-size: 1rem;
+            color: #1e1e1e;
+            font-weight: 500;
         }
 
         .footer-right {
-            text-align: right;
-            font-size: 0.85rem;
-            color: #666;
+            display: none; /* Remover a seção direita */
         }
 
         .footer-right p {
@@ -878,6 +901,12 @@
         </section>
 
         <section class="cta-final">
+            <div class="cta-final-elements">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/grZOJwBWbpYXlZom.svg" class="cta-el cta-el-tucano" alt="">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/YaMeZWDqQANguydJ.svg" class="cta-el cta-el-abelha" alt="">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/ZTMGAVPBdbKjTTzT.svg" class="cta-el cta-el-cacau" alt="">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/XEvfDMaEtrKFOFOk.svg" class="cta-el cta-el-vaca" alt="">
+            </div>
             <div class="cta-final-content">
                 <h2>Pronto para Começar?</h2>
                 <p>Registre sua primeira ação e faça parte da transformação rumo a um futuro regenerativo.</p>
@@ -889,11 +918,8 @@
     <footer>
         <div class="footer-container">
             <div class="footer-left">
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/CpJJqyQNVnthBKZd.svg" class="footer-logo" alt="Nestlé">
-                <span class="footer-text">Um projeto Auíri</span>
-            </div>
-            <div class="footer-right">
-                <p>&copy; 2026 Nestlé Brasil</p>
+                <span class="footer-text">Projeto realizado com muito orgulho pela</span>
+                <img src="https://auiri.com.br/wp-content/uploads/2023/05/logo-auiri-inovacao-para-impacto.svg" class="footer-logo" alt="Auíri - Inovação para Impacto">
             </div>
         </div>
     </footer>
