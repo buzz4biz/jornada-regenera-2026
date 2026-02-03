@@ -68,11 +68,14 @@
 
         /* ===== HERO SECTION ===== */
         .hero {
-            height: 90vh;
-            background-color: var(--color-primary);
-            background-image: url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/ghFXIdYsPzAYEQYZ.svg'); /* folha3.svg */
-            background-size: 400px;
+            height: 95vh;
+            background-color: #004d21; /* Verde mais profundo */
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(0,122,51,0.4) 0%, transparent 70%),
+                url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/ghFXIdYsPzAYEQYZ.svg'); /* folha3.svg */
+            background-size: cover, 600px;
             background-position: center;
+            background-repeat: no-repeat, repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -87,8 +90,20 @@
             content: '';
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(180deg, rgba(0,122,51,0.7) 0%, rgba(0,122,51,0.9) 100%);
+            background: linear-gradient(180deg, rgba(0,77,33,0.2) 0%, rgba(0,77,33,0.8) 100%);
+            backdrop-filter: blur(2px);
             z-index: 1;
+        }
+
+        /* Textura de Grão/Ruído para profundidade */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 2;
         }
 
         .hero-guirlanda {
@@ -149,18 +164,21 @@
         .hero-el {
             position: absolute;
             height: auto;
-            animation: float-subtle 10s ease-in-out infinite;
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.3));
+            animation: float-organic 15s ease-in-out infinite;
+            z-index: 5;
         }
 
-        @keyframes float-subtle {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+        @keyframes float-organic {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(10px, -15px) rotate(2deg); }
+            66% { transform: translate(-5px, -25px) rotate(-1deg); }
         }
 
-        .el-tucano { top: 15%; right: 10%; width: 120px; animation-delay: -2s; }
-        .el-abelha { top: 25%; left: 8%; width: 80px; animation-delay: -5s; }
-        .el-cacau { bottom: 15%; right: 12%; width: 100px; animation-delay: -1s; }
-        .el-vaca { bottom: 10%; left: 15%; width: 160px; animation-delay: -7s; }
+        .el-tucano { top: 12%; right: 12%; width: 150px; animation-delay: -2s; filter: drop-shadow(0 25px 40px rgba(0,0,0,0.4)) blur(0.5px); }
+        .el-abelha { top: 20%; left: 10%; width: 90px; animation-delay: -5s; }
+        .el-cacau { bottom: 18%; right: 15%; width: 120px; animation-delay: -1s; }
+        .el-vaca { bottom: 12%; left: 12%; width: 180px; animation-delay: -7s; filter: drop-shadow(0 15px 25px rgba(0,0,0,0.2)); }
 
         .hero-logo {
             margin: 2rem 0;
@@ -657,13 +675,12 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034600351/CpJJqyQNVnthBKZd.svg" alt="Nestlé Logo">
+                <!-- Logo removido conforme solicitado -->
             </div>
             <nav>
                 <a href="#about">Sobre</a>
                 <a href="#how-it-works">Como Funciona</a>
                 <a href="#progress">Progresso</a>
-
                 <a href="#faq">FAQ</a>
             </nav>
         </div>
