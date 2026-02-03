@@ -448,14 +448,11 @@
         .faq-answer {
             padding: 0 1.5rem 1.2rem 1.5rem;
             color: var(--color-text-light);
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-out;
+            display: none;
         }
 
         .faq-item.active .faq-answer {
-            max-height: 200px; /* Ajuste conforme o conteúdo */
-            transition: max-height 0.5s ease-in;
+            display: block;
         }
 
         .faq-item.active .faq-question .icon {
