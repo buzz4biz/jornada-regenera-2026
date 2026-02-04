@@ -356,6 +356,22 @@
             transform: translateX(-50%);
         }
 
+        .level-node:nth-child(1) {
+            left: 5%;
+        }
+
+        .level-node:nth-child(2) {
+            left: 35%;
+        }
+
+        .level-node:nth-child(3) {
+            left: 65%;
+        }
+
+        .level-node:nth-child(4) {
+            left: 95%;
+        }
+
         .level-dot {
             width: 80px;
             height: 80px;
@@ -1005,6 +1021,7 @@
 
             .level-node {
                 position: relative !important;
+                left: auto !important;
                 width: 100%;
                 max-width: 100%;
                 display: flex;
@@ -1015,6 +1032,23 @@
                 padding: 1.2rem 0;
                 gap: 0.5rem;
                 box-sizing: border-box;
+                transform: none !important;
+            }
+
+            .level-node:nth-child(1) {
+                left: auto !important;
+            }
+
+            .level-node:nth-child(2) {
+                left: auto !important;
+            }
+
+            .level-node:nth-child(3) {
+                left: auto !important;
+            }
+
+            .level-node:nth-child(4) {
+                left: auto !important;
             }
 
             .level-dot {
@@ -1341,7 +1375,7 @@
                     <path d="M 50 100 Q 250 50 450 100 T 950 100" stroke="var(--color-secondary)" stroke-width="3" stroke-dasharray="10,5" fill="none" opacity="0.6"/>
                 </svg>
                 <div class="levels-container">
-                    <div class="level-node" style="left: 5%;">
+                    <div class="level-node">
                         <div class="level-dot">
                             <span class="level-icon">🍯</span>
                         </div>
@@ -1351,7 +1385,7 @@
                             <p class="description">Começando sua jornada polinizadora com conhecimento e descoberta.</p>
                         </div>
                     </div>
-                    <div class="level-node" style="left: 35%;">
+                    <div class="level-node">
                         <div class="level-dot">
                             <span class="level-icon">🌱</span>
                         </div>
@@ -1361,7 +1395,7 @@
                             <p class="description">Explorando e coletando impacto com ações regulares e comprometidas.</p>
                         </div>
                     </div>
-                    <div class="level-node" style="left: 65%;">
+                    <div class="level-node">
                         <div class="level-dot">
                             <span class="level-icon">🌸</span>
                         </div>
@@ -1371,7 +1405,7 @@
                             <p class="description">Espalhando regeneração e influenciando seu entorno com impacto.</p>
                         </div>
                     </div>
-                    <div class="level-node" style="left: 95%;">
+                    <div class="level-node">
                         <div class="level-dot">
                             <span class="level-icon">👑</span>
                         </div>
