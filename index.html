@@ -976,41 +976,72 @@
             }
 
             /* LAYOUT ZIGUE-ZAGUE PARA NÍVEIS NO MOBILE */
-            .level-node {
-                position: static !important;
+            .levels-container {
+                position: relative !important;
+                height: auto !important;
                 display: flex;
-                flex-direction: column;
-                margin-bottom: 2rem;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
             }
 
-            .level-node:nth-child(even) {
-                flex-direction: column-reverse;
+            .level-node {
+                position: static !important;
+                width: 45%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 0;
+            }
+
+            .level-node:nth-child(odd) .level-info {
+                order: 2;
+                margin-top: 1rem;
+            }
+
+            .level-node:nth-child(odd) .level-dot {
+                order: 1;
+            }
+
+            .level-node:nth-child(even) .level-info {
+                order: 1;
+                margin-bottom: 1rem;
+            }
+
+            .level-node:nth-child(even) .level-dot {
+                order: 2;
             }
 
             .level-dot {
-                margin: 1rem 0;
+                margin: 0;
             }
 
             .level-info {
                 text-align: center;
                 background-color: #f5f5f5;
-                padding: 1rem;
+                padding: 0.8rem;
                 border-radius: 8px;
-                margin-top: 1rem;
+                font-size: 0.85rem;
+                width: 100%;
             }
 
-            .level-node:nth-child(even) .level-info {
-                margin-top: 0;
-                margin-bottom: 1rem;
+            .level-info h3 {
+                font-size: 1rem;
+                margin-bottom: 0.3rem;
+            }
+
+            .level-info .points {
+                font-size: 0.8rem;
+                margin-bottom: 0.3rem;
+            }
+
+            .level-info .description {
+                font-size: 0.75rem;
+                line-height: 1.2;
             }
 
             .levels-path {
                 display: none;
-            }
-
-            .levels-container {
-                position: static !important;
-                height: auto !important;
             }
 
             .footer-logo {
