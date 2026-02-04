@@ -483,8 +483,112 @@
         .catalog-card p {
             color: var(--color-text-light);
             font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* ===== DROPDOWN STYLES ===== */
+        .catalog-dropdowns {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .dropdown-category {
+            border: 2px solid var(--color-border);
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--color-white);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .dropdown-btn {
+            width: 100%;
+            padding: 1.5rem;
+            background-color: var(--color-white);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .dropdown-btn:hover {
+            background-color: var(--color-light);
+            color: var(--color-secondary);
+        }
+
+        .dropdown-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown-btn.active .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-content {
+            display: none;
+            padding: 1.5rem;
+            background-color: var(--color-light);
+            border-top: 2px solid var(--color-border);
+        }
+
+        .dropdown-content.show {
+            display: block;
+        }
+
+        .actions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .action-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 1rem;
+            background-color: var(--color-white);
+            border-radius: 8px;
+            border-left: 4px solid var(--color-secondary);
+            font-size: 0.95rem;
+            color: var(--color-text);
+        }
+
+        .action-item span:first-child {
+            flex: 1;
+            text-align: left;
+        }
+
+        .pts {
+            background-color: var(--color-accent);
+            color: var(--color-text);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        .levels-explanation {
+            background-color: var(--color-light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--color-secondary);
+        }
+
+        .levels-explanation p {
+            color: var(--color-text);
+            font-size: 1rem;
             line-height: 1.6;
-            margin: 0;
+        }   margin: 0;
         }
 
         /* ===== CATEGORIAS ===== */
@@ -887,34 +991,133 @@
         <section id="catalog" class="catalog">
             <h2>Catálogo de Ações</h2>
             <p>Sua Jornada, Suas Ações</p>
-            <div class="catalog-grid">
-                <div class="catalog-card">
-                    <div class="catalog-header">
-                        <h3>📚 Conhecimento</h3>
-                        <span class="points-badge">+1 a 5 pts</span>
+            <div class="catalog-dropdowns">
+                <!-- CONHECIMENTO -->
+                <div class="dropdown-category">
+                    <button class="dropdown-btn" onclick="toggleDropdown(this)">
+                        <span>📚 Conhecimento</span>
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div class="dropdown-content">
+                        <div class="actions-list">
+                            <div class="action-item"><span>1. Vídeo "O que é Regeneração?"</span> <span class="pts">1 pt</span></div>
+                            <div class="action-item"><span>2. Quiz "Net Zero Essencial"</span> <span class="pts">1 pt</span></div>
+                            <div class="action-item"><span>3. Leitura "Agriculture Framework"</span> <span class="pts">1 pt</span></div>
+                            <div class="action-item"><span>4. Artigo "Direitos Humanos na Cadeia"</span> <span class="pts">1 pt</span></div>
+                            <div class="action-item"><span>5. Infográfico "Ciclo da Água Regenerativa"</span> <span class="pts">1 pt</span></div>
+                            <div class="action-item"><span>6. Podcast "Vozes da Regeneração"</span> <span class="pts">1 pt</span></div>
+                            <div class="action-item"><span>7. Curso "ESG para Iniciantes"</span> <span class="pts">2 pts</span></div>
+                            <div class="action-item"><span>8. Relatório "Valor Compartilhado"</span> <span class="pts">2 pts</span></div>
+                            <div class="action-item"><span>9. Estudo de Caso "Café Regenera"</span> <span class="pts">2 pts</span></div>
+                            <div class="action-item"><span>10. Módulo "Embalagens Sustentáveis"</span> <span class="pts">2 pts</span></div>
+                            <div class="action-item"><span>11. Documentário "Do Campo à Mesa"</span> <span class="pts">2 pts</span></div>
+                            <div class="action-item"><span>12. Guia "Biodiversidade e Solo"</span> <span class="pts">2 pts</span></div>
+                            <div class="action-item"><span>13. Apresentação "Net Zero Roadmap"</span> <span class="pts">2 pts</span></div>
+                            <div class="action-item"><span>14. Artigo "Impacto Social do Cacau"</span> <span class="pts">2 pts</span></div>
+                            <div class="action-item"><span>15. Curso "Ética e Compliance ESG"</span> <span class="pts">2 pts</span></div>
+                            <div class="action-item"><span>16. Análise "Riscos Climáticos"</span> <span class="pts">2 pts</span></div>
+                            <div class="action-item"><span>17. Estudo "Pecuária Regenerativa"</span> <span class="pts">2 pts</span></div>
+                            <div class="action-item"><span>18. Whitepaper "Inovação em Água"</span> <span class="pts">2 pts</span></div>
+                            <div class="action-item"><span>19. Treinamento "Liderança ESG"</span> <span class="pts">2 pts</span></div>
+                            <div class="action-item"><span>20. Simulação "Crise Climática"</span> <span class="pts">2 pts</span></div>
+                        </div>
                     </div>
-                    <p>Assistir vídeos, ler guias e absorver conteúdos ESG da Nestlé.</p>
                 </div>
-                <div class="catalog-card">
-                    <div class="catalog-header">
-                        <h3>🤝 Participação</h3>
-                        <span class="points-badge">+1 a 5 pts</span>
+
+                <!-- PARTICIPAÇÃO -->
+                <div class="dropdown-category">
+                    <button class="dropdown-btn" onclick="toggleDropdown(this)">
+                        <span>🤝 Participação</span>
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div class="dropdown-content">
+                        <div class="actions-list">
+                            <div class="action-item"><span>21. Roda de Conversa "Meu ESG"</span> <span class="pts">2 pts</span></div>
+                            <div class="action-item"><span>22. Fórum "Ideias Regenera"</span> <span class="pts">2 pts</span></div>
+                            <div class="action-item"><span>23. Webinar "Diálogos Sustentáveis"</span> <span class="pts">2 pts</span></div>
+                            <div class="action-item"><span>24. Encontro "Time Regenera"</span> <span class="pts">2 pts</span></div>
+                            <div class="action-item"><span>25. Pesquisa de Engajamento ESG</span> <span class="pts">2 pts</span></div>
+                            <div class="action-item"><span>26. Mutiróo de Limpeza Virtual</span> <span class="pts">2 pts</span></div>
+                            <div class="action-item"><span>27. Grupo de Estudo "ODS na Nestlé"</span> <span class="pts">3 pts</span></div>
+                            <div class="action-item"><span>28. Sessão de Brainstorming "Inovação"</span> <span class="pts">3 pts</span></div>
+                            <div class="action-item"><span>29. Evento "Dia da Terra Nestlé"</span> <span class="pts">3 pts</span></div>
+                            <div class="action-item"><span>30. Comitê de Sustentabilidade</span> <span class="pts">3 pts</span></div>
+                            <div class="action-item"><span>31. Mentoria Reversa ESG</span> <span class="pts">3 pts</span></div>
+                            <div class="action-item"><span>32. Desafio "Consumo Consciente"</span> <span class="pts">3 pts</span></div>
+                            <div class="action-item"><span>33. Fórum de Boas Práticas</span> <span class="pts">3 pts</span></div>
+                            <div class="action-item"><span>34. Encontro com Liderança ESG</span> <span class="pts">3 pts</span></div>
+                            <div class="action-item"><span>35. Painel de Especialistas</span> <span class="pts">3 pts</span></div>
+                            <div class="action-item"><span>36. Programa de Voluntariado Corporativo</span> <span class="pts">3 pts</span></div>
+                            <div class="action-item"><span>37. Workshop "Futuro Regenera"</span> <span class="pts">3 pts</span></div>
+                            <div class="action-item"><span>38. Debate "Desafios da Cadeia"</span> <span class="pts">3 pts</span></div>
+                            <div class="action-item"><span>39. Encontro "Inovadores ESG"</span> <span class="pts">3 pts</span></div>
+                            <div class="action-item"><span>40. Feedback Estratégico ESG</span> <span class="pts">3 pts</span></div>
+                        </div>
                     </div>
-                    <p>Presença ativa em workshops, comitês e eventos sobre regeneração.</p>
                 </div>
-                <div class="catalog-card">
-                    <div class="catalog-header">
-                        <h3>✋ Ação</h3>
-                        <span class="points-badge">+1 a 5 pts</span>
+
+                <!-- AÇÃO -->
+                <div class="dropdown-category">
+                    <button class="dropdown-btn" onclick="toggleDropdown(this)">
+                        <span>✋ Ação</span>
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div class="dropdown-content">
+                        <div class="actions-list">
+                            <div class="action-item"><span>41. Descarte Correto de Pilhas</span> <span class="pts">3 pts</span></div>
+                            <div class="action-item"><span>42. Uso de Caneca Reutilizável</span> <span class="pts">3 pts</span></div>
+                            <div class="action-item"><span>43. Impressão Consciente</span> <span class="pts">3 pts</span></div>
+                            <div class="action-item"><span>44. Apagar Luzes/Monitores</span> <span class="pts">3 pts</span></div>
+                            <div class="action-item"><span>45. Coleta Seletiva na Estação</span> <span class="pts">3 pts</span></div>
+                            <div class="action-item"><span>46. Consumo Consciente de Água</span> <span class="pts">3 pts</span></div>
+                            <div class="action-item"><span>47. Otimização de Reuniões</span> <span class="pts">3 pts</span></div>
+                            <div class="action-item"><span>48. Transporte Sustentável</span> <span class="pts">3 pts</span></div>
+                            <div class="action-item"><span>49. Refeição "Plant-Based"</span> <span class="pts">3 pts</span></div>
+                            <div class="action-item"><span>50. Auditoria de Desperdício</span> <span class="pts">4 pts</span></div>
+                            <div class="action-item"><span>51. Reuso de Materiais</span> <span class="pts">4 pts</span></div>
+                            <div class="action-item"><span>52. Sugestão de Melhoria Processo</span> <span class="pts">4 pts</span></div>
+                            <div class="action-item"><span>53. Gestão de Resíduos Orgânicos</span> <span class="pts">4 pts</span></div>
+                            <div class="action-item"><span>54. Embaixador "Zero Desperdício"</span> <span class="pts">4 pts</span></div>
+                            <div class="action-item"><span>55. Implementação de Prática Regenerativa</span> <span class="pts">4 pts</span></div>
+                            <div class="action-item"><span>56. Redução de Viagens</span> <span class="pts">4 pts</span></div>
+                            <div class="action-item"><span>57. Uso de Produtos Sustentáveis</span> <span class="pts">4 pts</span></div>
+                            <div class="action-item"><span>58. Otimização de Energia</span> <span class="pts">4 pts</span></div>
+                            <div class="action-item"><span>59. Projeto de Economia Circular</span> <span class="pts">4 pts</span></div>
+                            <div class="action-item"><span>60. Consumo Responsável de Água</span> <span class="pts">4 pts</span></div>
+                        </div>
                     </div>
-                    <p>Implementação prática: coleta seletiva, redução de resíduos, otimização de processos.</p>
                 </div>
-                <div class="catalog-card">
-                    <div class="catalog-header">
-                        <h3>💡 Influência</h3>
-                        <span class="points-badge">+1 a 5 pts</span>
+
+                <!-- INFLUÈNCIA -->
+                <div class="dropdown-category">
+                    <button class="dropdown-btn" onclick="toggleDropdown(this)">
+                        <span>💡 Influência</span>
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div class="dropdown-content">
+                        <div class="actions-list">
+                            <div class="action-item"><span>61. Mentor "Primeiros Passos"</span> <span class="pts">5 pts</span></div>
+                            <div class="action-item"><span>62. Compartilhar Conhecimento ESG</span> <span class="pts">5 pts</span></div>
+                            <div class="action-item"><span>63. Artigo Interno "Minha Jornada"</span> <span class="pts">5 pts</span></div>
+                            <div class="action-item"><span>64. Embaixador de Programa</span> <span class="pts">5 pts</span></div>
+                            <div class="action-item"><span>65. Proposta de Melhoria ESG</span> <span class="pts">5 pts</span></div>
+                            <div class="action-item"><span>66. Liderar Grupo de Trabalho</span> <span class="pts">5 pts</span></div>
+                            <div class="action-item"><span>67. Mentoria de Projeto Sustentável</span> <span class="pts">5 pts</span></div>
+                            <div class="action-item"><span>68. Palestra Interna "Impacto Regenera"</span> <span class="pts">5 pts</span></div>
+                            <div class="action-item"><span>69. Representante em Evento Externo</span> <span class="pts">5 pts</span></div>
+                            <div class="action-item"><span>70. Cocriação com Stakeholders</span> <span class="pts">5 pts</span></div>
+                            <div class="action-item"><span>71. Desenvolvimento de Treinamento</span> <span class="pts">5 pts</span></div>
+                            <div class="action-item"><span>72. Publicação em Canal Interno</span> <span class="pts">5 pts</span></div>
+                            <div class="action-item"><span>73. Parceria Interna ESG</span> <span class="pts">5 pts</span></div>
+                            <div class="action-item"><span>74. Influenciador Digital Interno</span> <span class="pts">5 pts</span></div>
+                            <div class="action-item"><span>75. Benchmarking de Boas Práticas</span> <span class="pts">5 pts</span></div>
+                            <div class="action-item"><span>76. Proposta de Inovação Aberta</span> <span class="pts">5 pts</span></div>
+                            <div class="action-item"><span>77. Articulação com Liderança</span> <span class="pts">5 pts</span></div>
+                            <div class="action-item"><span>78. Embaixador de Valores</span> <span class="pts">5 pts</span></div>
+                            <div class="action-item"><span>79. Desenvolvimento de Ferramenta ESG</span> <span class="pts">5 pts</span></div>
+                            <div class="action-item"><span>80. Relato de Impacto Pessoal</span> <span class="pts">5 pts</span></div>
+                        </div>
                     </div>
-                    <p>Liderança de projetos, mentoria de colegas e engajamento de terceiros.</p>
                 </div>
             </div>
         </section>
@@ -922,6 +1125,9 @@
         <section class="levels">
             <h2>Seus Níveis de Evolução</h2>
             <p>Progresse e torne-se um Guardião da Regeneração</p>
+            <div class="levels-explanation">
+                <p><strong>Como funciona:</strong> Cada ação que você realiza no catálogo abaixo gera pontos. Acumule pontos e suba de nível! Quanto mais você se engaja, mais rápido você progride no voo da abelha.</p>
+            </div>
             <div class="levels-journey">
                 <svg class="levels-path" viewBox="0 0 1000 200" preserveAspectRatio="xMidYMid meet">
                     <!-- Rastro da abelha (linha pontilhada) -->
@@ -1098,6 +1304,23 @@
                 faqItem.classList.toggle('active');
             });
         });
+
+        function toggleDropdown(button) {
+            const content = button.nextElementSibling;
+            const isActive = button.classList.contains('active');
+            
+            // Fechar todos os dropdowns
+            document.querySelectorAll('.dropdown-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.nextElementSibling.classList.remove('show');
+            });
+            
+            // Abrir o dropdown clicado (se não estava aberto)
+            if (!isActive) {
+                button.classList.add('active');
+                content.classList.add('show');
+            }
+        }
 
         function verProgresso() {
             const emailInput = document.getElementById('emailInput');
