@@ -377,6 +377,81 @@
             line-height: 1.6;
         }
 
+        /* ===== CATÁLOGO DE AÇÕES ===== */
+        .catalog {
+            background-color: var(--color-light);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .catalog h2 {
+            font-size: 2.2rem;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .catalog > p {
+            color: var(--color-text-light);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .catalog-card {
+            background: var(--color-white);
+            border: 2px solid var(--color-border);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: left;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .catalog-card:hover {
+            border-color: var(--color-secondary);
+            box-shadow: 0 8px 24px rgba(0, 122, 51, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .catalog-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .catalog-card h3 {
+            font-size: 1.1rem;
+            color: var(--color-primary);
+            margin: 0;
+        }
+
+        .points-badge {
+            background-color: var(--color-accent);
+            color: var(--color-text);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .catalog-card p {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
         /* ===== CATEGORIAS ===== */
         .categories {
             background-color: var(--color-white);
@@ -774,6 +849,41 @@
             </div>
         </section>
 
+        <section id="catalog" class="catalog">
+            <h2>Catálogo de Ações</h2>
+            <p>Sua Jornada, Suas Ações</p>
+            <div class="catalog-grid">
+                <div class="catalog-card">
+                    <div class="catalog-header">
+                        <h3>📚 Conhecimento</h3>
+                        <span class="points-badge">+1 a 5 pts</span>
+                    </div>
+                    <p>Assistir vídeos, ler guias e absorver conteúdos ESG da Nestlé.</p>
+                </div>
+                <div class="catalog-card">
+                    <div class="catalog-header">
+                        <h3>🤝 Participação</h3>
+                        <span class="points-badge">+1 a 5 pts</span>
+                    </div>
+                    <p>Presença ativa em workshops, comitês e eventos sobre regeneração.</p>
+                </div>
+                <div class="catalog-card">
+                    <div class="catalog-header">
+                        <h3>✋ Ação</h3>
+                        <span class="points-badge">+1 a 5 pts</span>
+                    </div>
+                    <p>Implementação prática: coleta seletiva, redução de resíduos, otimização de processos.</p>
+                </div>
+                <div class="catalog-card">
+                    <div class="catalog-header">
+                        <h3>💡 Influência</h3>
+                        <span class="points-badge">+1 a 5 pts</span>
+                    </div>
+                    <p>Liderança de projetos, mentoria de colegas e engajamento de terceiros.</p>
+                </div>
+            </div>
+        </section>
+
         <section class="levels">
             <h2>Seus Níveis de Evolução</h2>
             <p>Progresse e torne-se um Guardião da Regeneração</p>
@@ -782,25 +892,25 @@
                     <span class="level-icon">🌱</span>
                     <h3>Descobridor</h3>
                     <p class="points">0 - 49 pontos</p>
-                    <p>Você está começando! Explore as ações, aprenda e dê seus primeiros passos na regeneração.</p>
+                    <p>Fase inicial de imersão e primeiras ações práticas.</p>
                 </div>
                 <div class="level-card">
                     <span class="level-icon">🌿</span>
                     <h3>Explorador</h3>
                     <p class="points">50 - 149 pontos</p>
-                    <p>Você já está engajado! Sua participação é regular e você já faz a diferença no dia a dia.</p>
+                    <p>Demonstra compromisso regular e já integra a sustentabilidade em sua rotina de trabalho.</p>
                 </div>
                 <div class="level-card">
                     <span class="level-icon">🌳</span>
                     <h3>Multiplicador</h3>
                     <p class="points">150 - 299 pontos</p>
-                    <p>Você é uma inspiração! Suas ações impactam e você já influencia colegas a participarem.</p>
+                    <p>Um agente ativo que influencia seu entorno e lidera pequenas mudanças em sua área.</p>
                 </div>
                 <div class="level-card">
                     <span class="level-icon">🌲</span>
                     <h3>Guardião</h3>
                     <p class="points">300+ pontos</p>
-                    <p>Parabéns! Você é um líder e defensor ativo da regeneração. Um verdadeiro Guardião!</p>
+                    <p>Nível de Elite. Representa a liderança máxima em regeneração, com impacto sistêmico na empresa.</p>
                 </div>
             </div>
         </section>
