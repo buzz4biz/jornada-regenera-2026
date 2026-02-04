@@ -69,12 +69,12 @@
         /* ===== HERO SECTION ===== */
         .hero {
             height: 95vh;
-            background: linear-gradient(135deg, #004d21 0%, #007a33 100%);
+            background: linear-gradient(180deg, #f5f9f7 0%, #e8f3f0 50%, #ddeae6 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: var(--color-white);
+            color: #1a3d2e;
             padding: 0 2rem;
             position: relative;
             overflow: hidden;
@@ -111,6 +111,7 @@
             line-height: 1.1;
             margin-bottom: 1.5rem;
             letter-spacing: -1px;
+            color: #004d21;
         }
 
         .hero p {
@@ -120,13 +121,14 @@
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-            opacity: 0.9;
+            color: #2d5a4a;
+            opacity: 1;
         }
 
         .hero-elements {
             position: absolute;
             top: 50%;
-            right: 5%;
+            right: 8%;
             transform: translateY(-50%);
             pointer-events: none;
             z-index: 5;
@@ -135,18 +137,20 @@
         .hero-el {
             position: absolute;
             height: auto;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
-            animation: float-bee 4s ease-in-out infinite;
+            filter: drop-shadow(0 15px 30px rgba(0,77,33,0.15));
+            animation: float-bee 5s ease-in-out infinite;
             z-index: 5;
         }
 
         @keyframes float-bee {
             0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(2deg); }
+            25% { transform: translateY(-20px) rotate(1deg); }
+            50% { transform: translateY(-30px) rotate(2deg); }
+            75% { transform: translateY(-15px) rotate(1deg); }
         }
 
         .el-tucano { display: none; }
-        .el-abelha { position: relative; top: 0; left: 0; width: 120px; animation-delay: 0s; }
+        .el-abelha { position: relative; top: 0; left: 0; width: 200px; animation-delay: 0s; }
         .el-cacau { display: none; }
         .el-vaca { display: none; }
 
